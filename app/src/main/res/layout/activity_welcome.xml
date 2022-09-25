@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".WelcomeActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:scrollY="-25dp"
+                android:scaleX="0.9"
+                android:scaleY="0.9"
+                android:layout_marginTop="40dp"
+                android:src="@drawable/welcomepng"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="40dp"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montiextrabold"
+                        android:textColor="@color/CustomBlack"
+                        android:text="Getting your marks and"
+                        android:textAlignment="center"
+                        android:textSize="28sp">
+
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montiextrabold"
+                        android:textColor="@color/CustomBlack"
+                        android:text="attendance is "
+                        android:textAlignment="center"
+                        android:textSize="28sp">
+
+                    </TextView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montblack"
+                        android:textColor="@color/CustomRed"
+                        android:text="easier"
+                        android:textAlignment="center"
+                        android:textSize="27sp">
+
+                    </TextView>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montiextrabold"
+                        android:textColor="@color/CustomBlack"
+                        android:text="than you think ! "
+                        android:textAlignment="center"
+                        android:textSize="28sp">
+
+                    </TextView>
+                </LinearLayout>
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sourcesemibold"
+                android:textColor="@color/CustomFontColor"
+                android:text="Sign up takes only 2 minutes "
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:layout_marginTop="19dp"
+                android:textSize="17sp">
+            </TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="45dp"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvGetStarted"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="55dp"
+                    app:cardElevation="2dp"
+                    app:cardMaxElevation="5dp"
+                    app:cardBackgroundColor="@color/CustomBlack"
+                    app:cardCornerRadius="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Get Started"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/montbold"
+                        android:textSize="16sp"/>
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/tvSignin"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:text="Sign in"
+                    android:layout_marginTop="30dp"
+                    android:gravity="center"
+                    android:background="@color/CustomSecondaryButton"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/montbold"
+                    android:textColor="@color/CustomBlack"
+                    android:layout_marginBottom="40dp">
+
+                </TextView>
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="Audisankara institute of\nScience and Technology"
+                android:gravity="center"
+                android:textSize="13sp"
+                android:fontFamily="@font/montbold"
+                android:textColor="@color/CustomFontColor"
+                android:layout_marginBottom="30dp"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
