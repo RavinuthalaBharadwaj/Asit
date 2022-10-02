@@ -40,5 +40,6 @@ dependencies {
     dependencies {
         implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.25'
         implementation 'com.github.blackfizz:eazegraph:1.2.5l@aar'
+        implementation 'com.airbnb.android:lottie:3.4.0'
     }
 }

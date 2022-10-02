@@ -13,9 +13,12 @@
         <entry key="..\:/AsitFinal/app/src/main/res/layout/activity_sign_in.xml" value="0.2988679352838745" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/activity_sign_up.xml" value="0.25" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/activity_welcome.xml" value="0.2988679352838745" />
-        <entry key="..\:/AsitFinal/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/AsitFinal/app/src/main/res/layout/fragment_home.xml" value="0.2988679352838745" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/fragment_list.xml" value="0.2534188034188034" />
+        <entry key="..\:/AsitFinal/app/src/main/res/layout/fragment_news_update_frag_one.xml" value="0.23846153846153847" />
+        <entry key="..\:/AsitFinal/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/fragment_search.xml" value="0.25" />
+        <entry key="..\:/AsitFinal/app/src/main/res/layout/fragment_syllabus.xml" value="0.25" />
         <entry key="..\:/AsitFinal/app/src/main/res/menu/items.xml" value="0.25" />
       </map>
     </option>

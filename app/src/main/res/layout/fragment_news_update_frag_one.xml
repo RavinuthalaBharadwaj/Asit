@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".ProfileFrag">
+    tools:context=".AttendanceActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -30,12 +30,10 @@
                     android:layout_centerInParent="true"
                     android:layout_gravity="center"
                     android:fontFamily="@font/montiextrabold"
-                    android:text="Profile"
+                    android:text="Updates"
                     android:textColor="@color/CustomFontColor"
                     android:textSize="18sp" />
             </RelativeLayout>
-
-
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
