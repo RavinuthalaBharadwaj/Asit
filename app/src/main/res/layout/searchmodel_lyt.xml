@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="18dp"
+    app:cardBackgroundColor="@color/CustomBlack"
+    app:cardElevation="10dp"
+    android:layout_marginBottom="20dp"
+    app:cardMaxElevation="10dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginHorizontal="30dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+                <ImageView
+                    android:id="@+id/SearchViewImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"
+                    android:src="@drawable/attendancehomefrag"
+                    android:scaleType="centerCrop"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/CvCategory"
+                android:layout_width="120dp"
+                android:layout_height="45dp"
+                android:layout_above="@id/SearchViewName"
+                android:layout_marginStart="30dp"
+                app:cardBackgroundColor="@color/CustomPurple"
+                android:layout_marginBottom="10dp"
+                app:cardCornerRadius="50dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/mesh12"
+                    android:scaleType="centerCrop"/>
+                <TextView
+                    android:id="@+id/TvCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/hel_bold_round"
+                    android:gravity="center"
+                    android:text="Books"
+                    android:textColor="@color/Homefragback" />
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/SearchViewName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="end"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/inter"
+                android:text="Attendance"
+                android:textColor="@color/homefragfont"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_centerInParent="true"
+                android:layout_below="@id/SearchViewName"
+                android:layout_marginTop="5dp">
+
+
+                <TextView
+                    android:id="@+id/SearcViewDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Check your attendance percentage \nbefore planning a vacation"
+                    android:textColor="@color/homefragfont"
+                    android:gravity="start"
+                    android:alpha="0.8"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/oboardfont"/>
+
+
+            </LinearLayout>
+        </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

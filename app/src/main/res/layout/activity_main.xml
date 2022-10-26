@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/CustomBlack"
     tools:context=".MainActivity">
 
     <FrameLayout
@@ -17,27 +17,20 @@
         app:layout_constraintTop_toTopOf="parent">
     </FrameLayout>
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        app:cardBackgroundColor="@color/CustomBlack"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
+        <com.ismaeldivita.chipnavigation.ChipNavigationBar
             android:id="@+id/bootomNavBar"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="65dp"
             android:background="@color/CustomBlack"
-            app:menu="@menu/items"
+            app:cnb_menuResource="@menu/items"
             app:itemIconSize="22sp"
-            app:itemRippleColor="@color/CustomRed"
-            app:layout_scrollFlags="scroll|enterAlways|snap"
+            app:cnb_animationDuration="170"
+            app:cnb_unselectedColor="#DDD5D5D5"
+            app:cnb_badgeColor="@color/CustomRed"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
-        </com.google.android.material.bottomnavigation.BottomNavigationView>
-    </androidx.cardview.widget.CardView>
+        </com.ismaeldivita.chipnavigation.ChipNavigationBar>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

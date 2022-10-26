@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="@color/homefragfont">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montbold"
+            android:layout_gravity="center"
+            android:textColor="@color/CustomBlack"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:text="Terms and Conditions"
+            android:textAlignment="center"
+            android:textSize="20sp">
+
+        </TextView>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"
+            app:lottie_autoPlay="true"
+            app:lottie_url="https://assets8.lottiefiles.com/packages/lf20_cmxmy8p4.json">
+        </com.airbnb.lottie.LottieAnimationView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvAgree"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="10dp"
+            app:cardBackgroundColor="@color/Homefragback"
+            android:layout_marginHorizontal="30dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Agree"
+                android:textColor="@color/homefragfont"
+                android:fontFamily="@font/oboardfont"
+                android:textSize="16sp"/>
+        </androidx.cardview.widget.CardView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montbold"
+            android:layout_gravity="center"
+            android:textColor="@color/CustomBlack"
+            android:layout_marginTop="25dp"
+            android:text="By clicking agree you Agree to our"
+            android:textAlignment="center"
+            android:textSize="13sp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/tvTerms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montbold"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/CustomRed"
+            android:layout_marginBottom="40dp"
+            android:text="Terms and conditions"
+            android:textAlignment="center"
+            android:textSize="13sp">
+
+        </TextView>
+
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/Homefragback"
     tools:context=".OtpActivity">
 
     <ScrollView
@@ -17,26 +17,19 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="300dp"
-
-                android:layout_marginTop="40dp"
-                android:src="@drawable/otp"/>
-
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="60dp"
                 android:gravity="center">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montbold"
-                    android:textColor="@color/CustomBlack"
+                    android:textColor="@color/homefragfont"
                     android:text="Your privacy is \nour Priority"
                     android:textAlignment="center"
                     android:textSize="28sp">
@@ -44,28 +37,38 @@
                 </TextView>
             </LinearLayout>
 
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                app:lottie_rawRes="@raw/otp"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"/>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="15dp"
-                android:fontFamily="@font/sourcesemibold"
-                android:text="Enter otp sended to :"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/montsemibold"
+                android:text="Enter the otp sended to :"
                 android:textAlignment="center"
-                android:textColor="@color/CustomFontColor"
-                android:textSize="17sp">
+                android:textColor="@color/homefragfont"
+                android:textSize="14sp">
             </TextView>
             <TextView
+                android:id="@+id/tvPhoneNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
                 android:gravity="center"
-                android:fontFamily="@font/sourcesemibold"
+                android:fontFamily="@font/inter"
                 android:text="+91 99854*****"
                 android:textAlignment="center"
-                android:textColor="@color/CustomFontColor"
-                android:textSize="17sp">
+                android:textColor="@color/homefragfont"
+                android:textSize="16sp">
             </TextView>
 
             <LinearLayout
@@ -76,6 +79,7 @@
                 android:orientation="vertical">
 
                 <in.aabhasjindal.otptextview.OtpTextView
+                    android:id="@+id/otpTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:height="55dp"
@@ -95,14 +99,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="45dp"
+                android:layout_marginTop="50dp"
                 android:orientation="vertical">
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cvVerifyOtp"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
-                    android:layout_marginTop="50dp"
-                    app:cardBackgroundColor="@color/CustomBlack"
+                    app:cardBackgroundColor="@color/homefragfont"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="2dp"
                     app:cardMaxElevation="8dp">
@@ -111,10 +115,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:fontFamily="@font/montbold"
+                        android:fontFamily="@font/hel_bold_round"
                         android:gravity="center"
                         android:text="Verify otp"
-                        android:textColor="@color/white"
+                        android:textColor="@color/Homefragback"
                         android:textSize="16sp" />
                 </androidx.cardview.widget.CardView>
 
@@ -130,16 +134,17 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="15sp"
-                        android:fontFamily="@font/sourcesemibold"
-                        android:textColor="@color/CustomBlack"
+                        android:fontFamily="@font/oboardfont"
+                        android:textColor="#E4A5A5A5"
                         android:text="Didn't Received ?"/>
 
                     <TextView
+                        android:id="@+id/tvSendAnother"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="15sp"
                         android:fontFamily="@font/montbold"
-                        android:textColor="@color/CustomRed"
+                        android:textColor="@color/homefragfont"
                         android:text=" Send another"/>
                 </LinearLayout>
             </LinearLayout>

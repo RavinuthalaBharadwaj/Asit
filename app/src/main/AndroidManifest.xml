@@ -3,31 +3,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.Audisankara.asit">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Asit"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".AttendanceActivity"
+            android:name=".WebViewActivity"
             android:exported="false" />
         <activity
-            android:name=".OtpActivity"
+            android:name=".FacultyAttendance"
             android:exported="false" />
         <activity
-            android:name=".SignUpActivity"
+            android:name=".GiveAttendanceFor15Days"
             android:exported="false" />
         <activity
-            android:name=".SignInActivity"
+            android:name=".TotalAttendance"
             android:exported="false" />
         <activity
-            android:name=".WelcomeActivity"
-            android:exported="true">
+            android:name=".SyllabusViewerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GiveAttendance"
+            android:exported="false" />
+        <activity
+            android:name=".FacultyHome"
+            android:exported="false" />
+        <activity
+            android:name=".FacultyLogin"
+            android:exported="false" />
+        <activity
+            android:name=".BooksMain"
+            android:exported="false" />
+        <activity
+            android:name=".BooksHomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BooksActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Splash"
+            android:exported="true"
+            android:theme="@style/welcome">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -35,8 +63,33 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".OtpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SignInUserActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SignUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SignInActivity"
+            android:exported="false"
+            android:theme="@style/welcome" />
+        <activity
+            android:name=".WelcomeActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true" />
+
+        <service
+            android:name=".Receivers.NotificationReceiver"
+            android:exported="true"
+            android:permission="TODO">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

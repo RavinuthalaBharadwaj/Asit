@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".AttendaceFrag">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/refreshlyt"
+        android:layout_width="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/Homefragback">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/montiextrabold"
+                        android:text="Attendance"
+                        android:textColor="@color/homefragfont"
+                        android:textSize="18sp" />
+                </RelativeLayout>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="25dp"
+                    app:cardCornerRadius="10dp">
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"
+                        app:lottie_rawRes="@raw/mesh2_lottie"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="15dp"
+                            android:fontFamily="@font/inter"
+                            android:layout_marginVertical="20dp"
+                            android:text="Welcome"
+                            android:alpha="0.7"
+                            android:textColor="@color/white"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/tvUsername"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:fontFamily="@font/montblack"
+                            android:paddingHorizontal="15dp"
+                            android:text="Ravinuthala Bharadwaj"
+                            android:textColor="@color/white"
+                            android:textSize="22sp" />
+                        <TextView
+                            android:id="@+id/tvRollNumber"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="202H1A05B2"
+                            android:layout_marginStart="30dp"
+                            android:layout_marginTop="5dp"
+                            android:textSize="13sp"
+                            android:fontFamily="@font/workmedium"
+                            android:textColor="@color/homefragfont"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/montbold"
+                    android:text="Your attendance analysis\nfor 15 days"
+                    android:textColor="@color/homefragfont"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Percentage"
+                    android:textColor="@color/homefragfont"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/workmedium"
+                    android:textSize="16sp"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:layout_marginHorizontal="23dp"
+                    android:layout_marginTop="20dp"
+                    app:cardBackgroundColor="#20575757"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="0dp"
+                    app:cardMaxElevation="0dp">
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="13dp"
+                        app:cardBackgroundColor="#743C3C3C"
+                        app:cardCornerRadius="16dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/meshten"
+                            android:scaleType="centerCrop"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/montblack"
+                            android:gravity="center"
+                            android:text="80%"
+                            android:visibility="gone"
+                            android:textColor="@color/CustomRed"
+                            android:textSize="17sp" />
+
+
+                        <com.owl93.dpb.CircularProgressView
+                            android:id="@+id/PercentageProgress"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="65dp"
+                            app:strokeWidth="10dp"
+                            app:trackAlpha="22"
+                            app:maxValue="100"
+                            app:progress="60"
+                            app:strokeGradientStyle="candy_cane"
+                            app:textFormat="pcnt_decimal"
+                            app:textEnabled="true"
+                            app:textGradientSize="text_only"
+                            app:textGradientEndColor="@color/black"
+                            app:textGradientStyle="sweep"
+                            app:direction="cw"
+                            app:animationInterpolator="accelerate_decelerate"
+                            app:textGradientStartColor="@color/black"
+                            app:textGradientCenterColor="@color/black"
+                            app:textSize="22sp"
+                            app:trackColor="@color/Homefragnotifybar"
+                            app:gradientStartColor="@color/black"
+                            app:gradientEndColor="@color/black"
+                            app:gradientCenterColor="@color/white"
+                            android:layout_gravity="center"/>
+
+                    </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Statics"
+                    android:textColor="@color/homefragfont"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/workmedium"
+                    android:textSize="16sp"/>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:layout_marginHorizontal="23dp"
+                    android:layout_marginTop="20dp"
+                    app:cardBackgroundColor="#20575757"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="0dp"
+                    app:cardMaxElevation="0dp">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="13dp"
+                        app:cardBackgroundColor="#743C3C3C"
+                        app:cardCornerRadius="16dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/mesh14"
+                            android:scaleType="centerCrop"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:layout_margin="10dp"
+                            android:weightSum="3">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:orientation="vertical"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:layout_weight="1">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Total classes held"
+                                    android:textColor="@color/Homefragback"
+                                    android:textSize="16sp"
+                                    android:layout_marginTop="5dp"
+                                    android:fontFamily="@font/hel_bold_round"/>
+
+                                <TextView
+                                    android:id="@+id/tvHeld"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="125 / 125"
+                                    android:textColor="@color/Homefragback"
+                                    android:textSize="16sp"
+                                    android:layout_marginTop="5dp"
+                                    android:fontFamily="@font/hel_bold_round"/>
+
+                                <ProgressBar
+                                    android:id="@+id/pbHeld"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="10dp"
+                                    android:layout_marginTop="5dp"
+                                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                                    android:progressDrawable="@drawable/horizontal_progress_for_main_card"
+                                    android:max="124"
+                                    android:progress="30"
+                                    android:layout_marginHorizontal="30dp">
+                                </ProgressBar>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:orientation="vertical"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:layout_weight="1">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Total classes Attended"
+                                    android:textColor="@color/Homefragback"
+                                    android:textSize="16sp"
+                                    android:layout_marginTop="5dp"
+                                    android:fontFamily="@font/hel_bold_round"/>
+
+                                <TextView
+                                    android:id="@+id/tvAttended"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="75 / 125"
+                                    android:textColor="@color/Homefragback"
+                                    android:textSize="16sp"
+                                    android:layout_marginTop="5dp"
+                                    android:fontFamily="@font/hel_bold_round"/>
+
+                                <ProgressBar
+                                    android:id="@+id/pbAttended"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="10dp"
+                                    android:layout_marginTop="5dp"
+                                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                                    android:progressDrawable="@drawable/horizontal_progress_for_main_card"
+                                    android:max="124"
+                                    android:progress="75"
+                                    android:layout_marginHorizontal="30dp">
+                                </ProgressBar>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:orientation="vertical"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:layout_weight="1">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Total Classes Skipped"
+                                    android:textColor="@color/Homefragback"
+                                    android:textSize="16sp"
+                                    android:layout_marginTop="5dp"
+                                    android:fontFamily="@font/hel_bold_round"/>
+
+                                <TextView
+                                    android:id="@+id/tvSkipped"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="50 / 125"
+                                    android:textColor="@color/Homefragback"
+                                    android:textSize="16sp"
+                                    android:layout_marginTop="5dp"
+                                    android:fontFamily="@font/hel_bold_round"/>
+
+                                <ProgressBar
+                                    android:id="@+id/pbSkipped"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="10dp"
+                                    android:layout_marginTop="5dp"
+                                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                                    android:progressDrawable="@drawable/horizontal_progress_for_main_card"
+                                    android:max="124"
+                                    android:progress="50"
+                                    android:layout_marginHorizontal="30dp">
+                                </ProgressBar>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/oboardfont"
+                    android:text="Quick Tip for you 🤭✨"
+                    android:textColor="@color/homefragfont"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="to maintain the 75 percent\nof attendance"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/workmedium"
+                    android:textColor="@color/homefragfont"
+                    android:alpha="0.4"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:alpha="0.9"
+                    android:layout_gravity="center"
+                    android:text="so in order to gain 75% of attendance\nYou need to attend 75% of 125 classes\nmeans you need to 12 days out of 15 days\nto achieve your 75 percent"
+                    android:fontFamily="@font/hel_bold_round"
+                    android:textSize="15sp"
+                    android:layout_marginBottom="30dp"
+                    android:textColor="@color/homefragfont"
+                    />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </RelativeLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</RelativeLayout>

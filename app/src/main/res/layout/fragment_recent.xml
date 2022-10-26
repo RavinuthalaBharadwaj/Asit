@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/lyrecent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/Homefragback"
+    android:orientation="vertical"
+    tools:context=".RecentFrag">
+
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/refreshlyt"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Hey,there here you can \nget your Notification Links"
+                    android:fontFamily="@font/hel_bold_round"
+                    android:textColor="@color/homefragfont"
+                    android:textSize="16sp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="30dp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/NotificationRecyclerer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginHorizontal="20dp"/>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:visibility="gone"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginHorizontal="30dp">
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:id="@+id/lottie"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_centerInParent="true"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            app:lottie_autoPlay="true"
+                            app:lottie_loop="true"
+                            app:lottie_rawRes="@raw/recent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="No Recent Uploads"
+                            android:fontFamily="@font/workmedium"
+                            android:textSize="14sp"
+                            android:layout_centerInParent="true"
+                            android:layout_alignParentBottom="true"/>
+
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Your recent teach talk Uploads"
+                    android:fontFamily="@font/hel_bold_round"
+                    android:textColor="@color/homefragfont"
+                    android:textSize="16sp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="10dp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/TechTalkRecycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginHorizontal="20dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Your recent Receipt Uploads"
+                    android:fontFamily="@font/hel_bold_round"
+                    android:textColor="@color/homefragfont"
+                    android:textSize="16sp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="10dp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_height="wrap_content"/>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_marginTop="10dp"
+                    android:visibility="gone"
+                    android:layout_marginHorizontal="30dp">
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/lottie1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:scaleX="0.7"
+                        android:scaleY="0.7"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"
+                        app:lottie_rawRes="@raw/recent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No Recent Uploads"
+                        android:fontFamily="@font/workmedium"
+                        android:textSize="14sp"
+                        android:layout_centerInParent="true"
+                        android:layout_alignParentBottom="true"/>
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</LinearLayout>

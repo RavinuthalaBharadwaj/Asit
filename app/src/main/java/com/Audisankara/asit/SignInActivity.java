@@ -3,57 +3,55 @@ package com.Audisankara.asit;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
-import android.app.Activity;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.TextView;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.RelativeLayout;
 
-public class SignInActivity extends AppCompatActivity implements View.OnClickListener{
+import com.airbnb.lottie.LottieAnimationView;
 
-    Activity activity ;
-    CardView SignIn ;
-    EditText RollNumber ;
-    EditText password ;
-    TextView Signup;
+public class SignInActivity extends AppCompatActivity{
+
+    private LottieAnimationView lottieAnimationView;
+    private CardView cvSignIn;
+    private RelativeLayout lytSignUp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
-        SignIn = findViewById(R.id.cvSignin);
-         RollNumber = findViewById(R.id.etRollNumber);
-         password = findViewById(R.id.etPassword);
-         Signup = findViewById(R.id.tvSignup);
-        activity = SignInActivity.this;
-        SignIn.setOnClickListener(this);
-
-    }
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.tvSignup:
-                startActivity(new Intent(activity,SignUpActivity.class));
-                finish();
-            case R.id.cvSignin:
-                if(RollNumber.getText().toString().isEmpty()) {
-                    RollNumber.setError("College Id");
-                    RollNumber.requestFocus();
-                }else if(password.getText().toString().isEmpty()) {
-                    password.setError("password");
-                    password.requestFocus();
-                }else{
-                    startActivity(new Intent(activity,OtpActivity.class));
-                    finish();
-                }
+        if (Build.VERSION.SDK_INT >= 21) {
+            Window window = this.getWindow();
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            window.setStatusBarColor(this.getResources().getColor(R.color.CustomFontColor));
         }
+        cvSignIn = findViewById(R.id.cvSignin);
+        lytSignUp = findViewById(R.id.LytSignup);
+
+        cvSignIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SignInActivity.this,SignInUserActivity.class));
+            }
+        });
+        lytSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SignInActivity.this,SignUpActivity.class));
+            }
+        });
     }
+
 
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(activity,WelcomeActivity.class));
+        startActivity(new Intent(SignInActivity.this,WelcomeActivity.class));
         finish();
     }
 }

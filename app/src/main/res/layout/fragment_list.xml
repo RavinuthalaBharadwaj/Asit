@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".AttendanceActivity">
+    android:id="@+id/lytyt"
+    android:background="@color/Homefragback"
+    tools:context=".ListFrag">
+
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="0dp">
+        android:layout_marginHorizontal="0dp"
+        android:scrollbars="none">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -19,300 +22,661 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="60dp"
                 android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal">
 
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
                     android:layout_centerInParent="true"
-                    android:layout_gravity="center"
-                    android:fontFamily="@font/montiextrabold"
-                    android:text="OverView1"
-                    android:textColor="@color/CustomFontColor"
-                    android:textSize="18sp" />
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/inter"
+                    android:text="YouTube"
+                    android:textColor="@color/CustomRed"
+                    android:textSize="23sp" />
             </RelativeLayout>
 
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                app:cardCornerRadius="15dp"
-                app:cardBackgroundColor="#FFFFFF"
-                app:cardElevation="7dp"
-                android:layout_marginBottom="20dp"
-                app:cardMaxElevation="10dp"
-                android:layout_marginHorizontal="30dp">
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="300dp"
+                android:layout_marginTop="10dp"
+                android:scrollbars="none">
 
                 <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="30dp"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="260dp"
+                        android:layout_height="match_parent"
+                        app:cardBackgroundColor="#4B575757"
+                        app:cardCornerRadius="12dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv1"
+                            android:layout_width="240dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="10dp"
+                            app:cardCornerRadius="12dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:id="@+id/video1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    android:scaleX="1.4"
+                                    android:scaleY="1.4"></ImageView>
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="80dp"
+                                    android:layout_alignParentBottom="true"
+                                    android:alpha="0.6"
+                                    android:background="@color/Homefragback" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_centerInParent="true"
+                                    android:layout_marginBottom="17dp"
+                                    android:fontFamily="@font/workbold"
+                                    android:gravity="start"
+                                    android:text="A beautiful message \ndelivered by Smt.Vanki Aravinda ."
+                                    android:textColor="@color/homefragfont"
+                                    android:textSize="13sp" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="260dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="20dp"
+                        app:cardBackgroundColor="#4B575757"
+                        app:cardCornerRadius="12dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv2"
+                            android:layout_width="240dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="10dp"
+                            app:cardCornerRadius="12dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:id="@+id/video2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    android:scaleX="1.4"
+                                    android:scaleY="1.4"></ImageView>
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="80dp"
+                                    android:layout_alignParentBottom="true"
+                                    android:alpha="0.6"
+                                    android:background="@color/Homefragback" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_centerInParent="true"
+                                    android:layout_marginHorizontal="6dp"
+                                    android:layout_marginBottom="15dp"
+                                    android:fontFamily="@font/workbold"
+                                    android:gravity="start"
+                                    android:text="Orientation Day - 2021 Message\ndelivered by Chief Guest JD Lakshmi Narayana"
+                                    android:textSize="13sp" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="260dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="20dp"
+                        app:cardBackgroundColor="#4B575757"
+                        app:cardCornerRadius="12dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv3"
+                            android:layout_width="240dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="10dp"
+                            app:cardCornerRadius="12dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:id="@+id/video3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    android:scaleX="1.4"
+                                    android:scaleY="1.4"></ImageView>
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="80dp"
+                                    android:layout_alignParentBottom="true"
+                                    android:alpha="0.6"
+                                    android:background="@color/Homefragback" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_centerInParent="true"
+                                    android:layout_marginBottom="12dp"
+                                    android:layout_marginHorizontal="6dp"
+                                    android:fontFamily="@font/workbold"
+                                    android:gravity="start"
+                                    android:text="I- B.Tech Orientation Programme Message\nDelivered by Dr. A. Mohan Garu"
+                                    android:textSize="13sp" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="260dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="60dp"
+                        app:cardBackgroundColor="#4B575757"
+                        app:cardCornerRadius="12dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv4"
+                            android:layout_width="240dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="10dp"
+                            app:cardCornerRadius="12dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:id="@+id/video4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    android:scaleX="1.4"
+                                    android:scaleY="1.4"></ImageView>
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="80dp"
+                                    android:layout_alignParentBottom="true"
+                                    android:alpha="0.6"
+                                    android:background="@color/Homefragback" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_centerInParent="true"
+                                    android:layout_marginBottom="12dp"
+                                    android:fontFamily="@font/workbold"
+                                    android:gravity="start"
+                                    android:text="I- B.Tech Orientation Programme-2022\nFirst year faculty Introduction."
+                                    android:textSize="13sp" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvchannel"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="30dp"
+                app:cardBackgroundColor="@color/CustomBlack"
+                app:cardCornerRadius="10dp">
+
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_gravity="center"
                     android:gravity="center"
                     android:orientation="vertical">
 
-                    <TextView
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/frame2" />
+
+                    <LinearLayout
+                        android:id="@+id/lyt1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Attendance"
-                        android:textColor="@color/CustomBlack"
-                        android:textSize="18sp"
-                        android:gravity="end"
-                        android:layout_marginEnd="30dp"
-                        android:layout_gravity="end"
-                        android:fontFamily="@font/montbold"/>
+                        android:layout_marginTop="65dp"
+                        android:gravity="center">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="90dp"
+                            android:layout_height="90dp"
+                            android:layout_gravity="center"
+                            app:cardCornerRadius="200dp">
+
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/youtube" />
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="70dp"
-                        android:layout_gravity="center"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/lyt1"
+                        android:layout_marginTop="30dp"
                         android:gravity="center"
-                        android:layout_marginTop="15dp">
-
-                        <pl.droidsonroids.gif.GifImageView
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
-                            android:src="@drawable/attendance"
-                            android:scaleX="0.7"
-                            android:scaleY="0.7"
-                            android:layout_marginStart="20dp"/>
+                        android:orientation="vertical">
 
                         <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montbold"
+                            android:gravity="center"
+                            android:text="Follow our youtube channel\nFor more content"
+                            android:textColor="@color/white"
+                            android:textSize="16.6sp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="22dp"
+                        android:layout_marginBottom="15dp"
+                        android:alpha="0.5"
+                        android:fontFamily="@font/montsemibold"
+                        android:gravity="center"
+                        android:text="Tap here to visit"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginVertical="20dp"
+                android:fontFamily="@font/oboardfont"
+                android:text="Playlist for you"
+                android:textColor="@color/homefragfont"
+                android:textSize="17sp" />
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginHorizontal="20dp"
+                app:cardBackgroundColor="#20575757"
+                app:cardCornerRadius="12dp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="13dp"
+                    app:cardCornerRadius="17dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/video5"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="Check your attendance percentage \nbefore planning a vacation"
-                            android:textColor="@color/CustomBlack"
-                            android:gravity="center"
-                            android:alpha="0.8"
-                            android:textSize="15sp"
-                            android:fontFamily="@font/sourcesemibold"/>
-                    </LinearLayout>
-                </LinearLayout>
+                            android:scaleType="centerCrop"
+                            android:scaleX="1.3"
+                            android:scaleY="1.3">
+
+                        </ImageView>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:layout_alignParentBottom="true"
+                            android:alpha="0.5"
+                            android:background="@color/Homefragback" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:layout_alignParentBottom="true"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="15dp"
+                                android:fontFamily="@font/oboardfont"
+                                android:text="6th Graduation day Message"
+                                android:textColor="@color/homefragfont" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="end"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_marginHorizontal="10dp"
+                                    android:layout_marginTop="15dp"
+                                    android:src="@drawable/yt_play" />
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="13dp"
+                                    android:layout_marginEnd="13dp"
+                                    android:fontFamily="@font/montbold"
+                                    android:text="play"
+                                    android:textColor="@color/homefragfont" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
 
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="180dp"
-                app:cardCornerRadius="15dp"
-                app:cardBackgroundColor="#FFFFFF"
-                app:cardElevation="7dp"
-                android:layout_marginBottom="20dp"
-                app:cardMaxElevation="10dp"
-                android:layout_marginHorizontal="30dp">
+                android:layout_height="250dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                app:cardBackgroundColor="#20575757"
+                app:cardCornerRadius="12dp">
 
-                <LinearLayout
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv6"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                    android:layout_margin="13dp"
+                    app:cardCornerRadius="17dp">
 
-                    <TextView
+                    <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Results"
-                        android:textColor="@color/CustomBlack"
-                        android:textSize="18sp"
-                        android:gravity="end"
-                        android:layout_marginEnd="30dp"
-                        android:layout_gravity="end"
-                        android:fontFamily="@font/montbold"/>
+                        android:layout_height="match_parent">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="70dp"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:layout_marginTop="15dp">
-
-                        <pl.droidsonroids.gif.GifImageView
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
-                            android:src="@drawable/results"
-                            android:layout_marginStart="20dp"/>
-
-                        <TextView
+                        <ImageView
+                            android:id="@+id/video6"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="Get the results from Asit website's and don't forgot about the party"
-                            android:textColor="@color/CustomBlack"
-                            android:gravity="center"
-                            android:alpha="0.8"
-                            android:textSize="15sp"
-                            android:fontFamily="@font/sourcesemibold"/>
-                    </LinearLayout>
-                </LinearLayout>
+                            android:scaleType="centerCrop"
+                            android:scaleX="1.3"
+                            android:scaleY="1.3">
+
+                        </ImageView>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:layout_alignParentBottom="true"
+                            android:alpha="0.5"
+                            android:background="@color/Homefragback" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:layout_alignParentBottom="true"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="15dp"
+                                android:fontFamily="@font/oboardfont"
+                                android:text="Sarva Adbutha Maha santhi Yagam"
+                                android:textColor="@color/homefragfont" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="end"
+                                android:orientation="horizontal">
+
+                                <ImageView
+
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_marginHorizontal="10dp"
+                                    android:layout_marginTop="15dp"
+                                    android:src="@drawable/yt_play" />
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="13dp"
+                                    android:layout_marginEnd="13dp"
+                                    android:fontFamily="@font/montbold"
+                                    android:text="play"
+                                    android:textColor="@color/homefragfont" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
 
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="180dp"
-                app:cardCornerRadius="15dp"
-                app:cardBackgroundColor="#FFFFFF"
-                app:cardElevation="7dp"
-                android:layout_marginBottom="20dp"
-                app:cardMaxElevation="10dp"
-                android:layout_marginHorizontal="30dp">
+                android:layout_height="250dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                app:cardBackgroundColor="#20575757"
+                app:cardCornerRadius="12dp">
 
-                <LinearLayout
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv7"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                    android:layout_margin="13dp"
+                    app:cardCornerRadius="17dp">
 
-                    <TextView
+                    <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Syllabus"
-                        android:textColor="@color/CustomBlack"
-                        android:textSize="18sp"
-                        android:gravity="end"
-                        android:layout_marginEnd="30dp"
-                        android:layout_gravity="end"
-                        android:fontFamily="@font/montbold"/>
+                        android:layout_height="match_parent">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="70dp"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:layout_marginTop="15dp">
-
-                        <pl.droidsonroids.gif.GifImageView
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
-                            android:src="@drawable/syllabus"
-                            android:scaleX="0.8"
-                            android:scaleY="0.8"
-                            android:layout_marginStart="20dp"/>
-
-                        <TextView
+                        <ImageView
+                            android:id="@+id/video7"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="Get the Syllabus from Specified Autonomous Curriculum"
-                            android:textColor="@color/CustomBlack"
-                            android:gravity="center"
-                            android:alpha="0.8"
-                            android:textSize="15sp"
-                            android:fontFamily="@font/sourcesemibold"/>
-                    </LinearLayout>
-                </LinearLayout>
+                            android:scaleType="centerCrop"
+                            android:scaleX="1.3"
+                            android:scaleY="1.3">
+
+                        </ImageView>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:layout_alignParentBottom="true"
+                            android:alpha="0.5"
+                            android:background="@color/Homefragback" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:layout_alignParentBottom="true"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="15dp"
+                                android:fontFamily="@font/oboardfont"
+                                android:text="I- B.Tech Orientation Programme pt-2"
+                                android:textColor="@color/homefragfont" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="end"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_marginHorizontal="10dp"
+                                    android:layout_marginTop="15dp"
+                                    android:src="@drawable/yt_play" />
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="13dp"
+                                    android:layout_marginEnd="13dp"
+                                    android:fontFamily="@font/montbold"
+                                    android:text="play"
+                                    android:textColor="@color/homefragfont" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
 
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="180dp"
-                app:cardCornerRadius="15dp"
-                app:cardBackgroundColor="#FFFFFF"
-                app:cardElevation="7dp"
-                android:layout_marginBottom="20dp"
-                app:cardMaxElevation="10dp"
-                android:layout_marginHorizontal="30dp">
+                android:layout_height="250dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginBottom="80dp"
+                android:layout_marginTop="15dp"
+                app:cardBackgroundColor="#20575757"
+                app:cardCornerRadius="12dp">
 
-                <LinearLayout
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv8"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                    android:layout_margin="13dp"
+                    app:cardCornerRadius="17dp">
 
-                    <TextView
+                    <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Attendance"
-                        android:textColor="@color/CustomBlack"
-                        android:textSize="18sp"
-                        android:gravity="end"
-                        android:layout_marginEnd="30dp"
-                        android:layout_gravity="end"
-                        android:fontFamily="@font/montbold"/>
+                        android:layout_height="match_parent">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="70dp"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:layout_marginTop="15dp">
-
-                        <pl.droidsonroids.gif.GifImageView
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
-                            android:src="@drawable/attendance"
-                            android:scaleX="0.9"
-                            android:scaleY="0.9"
-                            android:layout_marginStart="20dp"/>
-
-                        <TextView
+                        <ImageView
+                            android:id="@+id/video8"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="Check your attendance percentage before planning a vacation"
-                            android:textColor="@color/CustomBlack"
-                            android:gravity="center"
-                            android:alpha="0.8"
-                            android:textSize="15sp"
-                            android:fontFamily="@font/sourcesemibold"/>
-                    </LinearLayout>
-                </LinearLayout>
+                            android:scaleType="centerCrop"
+                            android:scaleX="1.3"
+                            android:scaleY="1.3">
+
+                        </ImageView>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:layout_alignParentBottom="true"
+                            android:alpha="0.5"
+                            android:background="@color/Homefragback" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:layout_alignParentBottom="true"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="15dp"
+                                android:fontFamily="@font/oboardfont"
+                                android:text="March 8th Women's Day Celebrations"
+                                android:textColor="@color/homefragfont" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="end"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_marginHorizontal="10dp"
+                                    android:layout_marginTop="15dp"
+                                    android:src="@drawable/yt_play" />
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="13dp"
+                                    android:layout_marginEnd="13dp"
+                                    android:fontFamily="@font/montbold"
+                                    android:text="play"
+                                    android:textColor="@color/homefragfont" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
 
             </androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                app:cardCornerRadius="15dp"
-                app:cardBackgroundColor="#FFFFFF"
-                app:cardElevation="7dp"
-                android:layout_marginBottom="20dp"
-                app:cardMaxElevation="10dp"
-                android:layout_marginHorizontal="30dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Attendance"
-                        android:textColor="@color/CustomBlack"
-                        android:textSize="18sp"
-                        android:gravity="end"
-                        android:layout_marginEnd="30dp"
-                        android:layout_gravity="end"
-                        android:fontFamily="@font/montbold"/>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="70dp"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:layout_marginTop="15dp">
-
-                        <pl.droidsonroids.gif.GifImageView
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
-                            android:src="@drawable/attendance"
-                            android:scaleX="0.9"
-                            android:scaleY="0.9"
-                            android:layout_marginStart="20dp"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="Check your attendance percentage before planning a vacation"
-                            android:textColor="@color/CustomBlack"
-                            android:gravity="center"
-                            android:alpha="0.8"
-                            android:textSize="15sp"
-                            android:fontFamily="@font/sourcesemibold"/>
-                    </LinearLayout>
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
         </LinearLayout>
     </ScrollView>
-</LinearLayout>
+</RelativeLayout>

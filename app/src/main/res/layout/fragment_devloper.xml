@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    android:background="@color/CustomBlack"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".DevloperFrag">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginHorizontal="20dp"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:fontFamily="@font/montiextrabold"
+                android:text="Developer"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            android:layout_centerInParent="true"
+            app:lottie_rawRes="@raw/devpage" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="200dp"
+            android:layout_centerInParent="true">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/devimg"/>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ravinuthala Bharadwaj"
+        android:textColor="@color/white"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/montbold"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="18sp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="202H1A05B2"
+        android:textColor="@color/white"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/montbold"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="40dp"
+        android:layout_gravity="center"
+        android:text="Hey, There welcome. well i think most of you\nFolks know me. But in case if you don't\nHi!!. nice to meet you and you can\ncontact me by using ."
+        android:textSize="13.5sp"
+        android:textColor="@color/white"
+        android:alpha="0.7"
+        android:fontFamily="@font/montsemibold"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="3"
+        android:gravity="center"
+        android:layout_marginTop="40dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imggithub"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:layout_weight="0.6"
+            android:src="@drawable/github"/>
+        <ImageView
+            android:id="@+id/imgWhatsapp"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:layout_weight="0.6"
+            android:src="@drawable/whatsapp"/>
+        <ImageView
+            android:id="@+id/imginstagram"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:layout_weight="0.6"
+            android:scaleX="1.3"
+            android:scaleY="1.3"
+            android:src="@drawable/instagram"/>
+        <ImageView
+            android:id="@+id/email"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:layout_weight="0.6"
+            android:src="@drawable/gmail"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:fontFamily="@font/montsemibold"
+        android:textSize="12sp"
+        android:alpha="0.8"
+        android:text="And if this app helps you in solving any \nproblem that you are facing daily in \nAcademic prespective.">
+    </TextView>
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        android:layout_marginTop="10dp"
+        app:lottie_rawRes="@raw/coffe"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Apperciate my work? Buy me a coffie"
+                android:textSize="17sp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="80dp"
+                android:fontFamily="@font/montsemibold"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

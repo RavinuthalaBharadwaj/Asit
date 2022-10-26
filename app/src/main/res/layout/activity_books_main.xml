@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Homefragback"
+    tools:context=".BooksMain">
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        android:scaleType="centerCrop"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/mesh2_lottie" />
+
+    <LinearLayout
+        android:id="@+id/one"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvSubjectName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/montiextrabold"
+            android:text="Cyber Security"
+            android:textColor="@color/homefragfont"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/montsemibold"
+            android:text="Get the syllabus,Assignments,Materilas \nand many more .."
+            android:textColor="#DCF6F5F5"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_below="@id/one"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="10dp"
+        android:alpha="0.4"
+        android:background="@drawable/line" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tablyt"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_below="@id/view"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:animateLayoutChanges="true"
+        android:background="@android:color/transparent"
+        android:backgroundTint="@android:color/transparent"
+        android:elevation="0dp"
+        app:tabBackground="@color/transparent"
+        app:tabIndicator="@drawable/tab_bar"
+        app:tabIndicatorAnimationDuration="2000"
+        app:tabIndicatorColor="@color/homefragfont"
+        app:tabIndicatorHeight="4dp"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="@color/homefragfont"
+        app:tabTextColor="#C8F6F5F5">
+    </com.google.android.material.tabs.TabLayout>
+
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tablyt">
+    </androidx.viewpager.widget.ViewPager>
+
+</RelativeLayout>

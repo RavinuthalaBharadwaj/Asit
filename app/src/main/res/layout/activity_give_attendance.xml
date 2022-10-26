@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Homefragback"
+    tools:context=".GiveAttendance">
+
+
+    <TextView
+        android:id="@+id/tvRollNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/montbold"
+        android:text="202H1A05B2"
+        android:textColor="@color/homefragfont"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvRollNumber"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="100dp"
+        android:fontFamily="@font/workbold"
+        android:text="Present"
+        android:textColor="@color/homefragfont"
+        android:textSize="17sp" />
+
+    <EditText
+        android:id="@+id/etPresent"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_below="@id/one"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/etbackfdefault"
+        android:fontFamily="@font/workmedium"
+        android:padding="15dp"
+        android:textColor="@color/homefragfont"
+        android:textSize="16sp"></EditText>
+
+    <TextView
+        android:id="@+id/Two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etPresent"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/workbold"
+        android:text="Absent"
+        android:textColor="@color/homefragfont"
+        android:textSize="17sp" />
+
+
+    <EditText
+        android:id="@+id/etAbsent"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_below="@id/Two"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/etbackfdefault"
+        android:fontFamily="@font/workmedium"
+        android:padding="15dp"
+        android:textColor="@color/homefragfont"
+        android:textSize="16sp"></EditText>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/etAbsent"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="60dp"
+        app:cardBackgroundColor="@color/CustomBlack"
+        app:cardCornerRadius="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/oboardfont"
+            android:text="Submit"
+            android:textSize="17sp" />
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
