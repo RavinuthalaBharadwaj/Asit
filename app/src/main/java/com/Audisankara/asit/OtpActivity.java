@@ -1,15 +1,10 @@
 package com.Audisankara.asit;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -17,25 +12,23 @@ import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+
 import com.Audisankara.asit.helper.Constant;
 import com.Audisankara.asit.helper.Session;
 import com.google.android.gms.tasks.OnCanceledListener;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 import in.aabhasjindal.otptextview.OtpTextView;
@@ -63,7 +56,7 @@ public class OtpActivity extends AppCompatActivity {
             Window window = this.getWindow();
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            window.setStatusBarColor(this.getResources().getColor(R.color.CustomBlack));
+            window.setStatusBarColor(this.getResources().getColor(R.color.Homefragback));
         }
         String number = getIntent().getStringExtra(Constant.PHONENUMBER);
         String phone = "+91" + number;
@@ -87,6 +80,7 @@ public class OtpActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sendVerification(phone);
+                Toast.makeText(OtpActivity.this, "Otp sent Successfully", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -103,7 +97,12 @@ public class OtpActivity extends AppCompatActivity {
                                 new Handler().postDelayed(new Runnable() {
                                     @Override
                                     public void run() {
-                                        startActivity(new Intent(OtpActivity.this, MainActivity.class));
+                                        if(getIntent().getStringExtra(Constant.ROLLNUMBER).startsWith("212H1A")) {
+                                            Toast.makeText(OtpActivity.this,"avail sooon",Toast.LENGTH_SHORT).show();
+                                            //startActivity(new Intent(OtpActivity.this, MainActivityForSecondYear.class));
+                                        }else {
+                                            startActivity(new Intent(OtpActivity.this, MainActivity.class));
+                                        }
                                         finish();
                                     }
                                 },3000);

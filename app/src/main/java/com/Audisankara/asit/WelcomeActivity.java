@@ -1,8 +1,5 @@
 package com.Audisankara.asit;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
@@ -15,14 +12,13 @@ import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.airbnb.lottie.LottieAnimationView;
-import com.bumptech.glide.Glide;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 public class WelcomeActivity extends AppCompatActivity {
 
     private CardView cvGetStarted;
     private Activity activity;
-    private LottieAnimationView lottieAnimationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +31,7 @@ public class WelcomeActivity extends AppCompatActivity {
             window.setStatusBarColor(this.getResources().getColor(R.color.Homefragback));
         }
 
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
         Dialog dialogone = new Dialog(this);
         dialogone.setContentView(R.layout.termsandconditions);
         dialogone.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -67,7 +64,7 @@ public class WelcomeActivity extends AppCompatActivity {
         terms.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(activity, "come i say ", Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity, "cant avail right now ", Toast.LENGTH_SHORT).show();
             }
         });
 

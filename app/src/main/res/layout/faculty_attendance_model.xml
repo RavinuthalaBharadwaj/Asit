@@ -18,6 +18,6 @@
         android:text="202H1A05B2"
         android:textColor="@color/homefragfont"
         android:layout_gravity="center"
-        android:fontFamily="@font/workbold"
+        android:fontFamily="@font/montbold"
         android:textSize="17sp"/>
 </androidx.cardview.widget.CardView>

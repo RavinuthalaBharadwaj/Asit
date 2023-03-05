@@ -6,55 +6,80 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM"/>
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="29" />
 
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_logo"
         android:label="@string/app_name"
         android:largeHeap="true"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_logo_round"
+        android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/Theme.Asit"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".WebViewActivity"
+            android:name=".SomeThingWentWrongActivity"
             android:exported="false" />
+        <activity
+            android:name=".PdfViewActivity"
+            android:exported="true" />
+        <activity
+            android:name=".WebPage"
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".FacultyAttendance"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".GiveAttendanceFor15Days"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".TotalAttendance"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".SyllabusViewerActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".GiveAttendance"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".FacultyHome"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".FacultyLogin"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".BooksMain"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".BooksHomeActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".BooksActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Splash"
             android:exported="true"
+            android:screenOrientation="portrait"
             android:theme="@style/welcome">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -64,32 +89,42 @@
         </activity>
         <activity
             android:name=".OtpActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".SignInUserActivity"
-            android:exported="false" />
+            android:exported="true"
+            android:screenOrientation="portrait" >
+        </activity>
         <activity
             android:name=".SignUpActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".SignInActivity"
-            android:exported="false"
-            android:theme="@style/welcome" />
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/welcome" >
+        </activity>
         <activity
             android:name=".WelcomeActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait" />
 
         <service
             android:name=".Receivers.NotificationReceiver"
             android:exported="true"
-            android:permission="TODO">
+            android:permission="TODO"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+        <receiver android:name=".Feautres.AlarmReceiver"/>
     </application>
 
 </manifest>

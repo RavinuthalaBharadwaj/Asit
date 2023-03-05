@@ -1,11 +1,5 @@
 package com.Audisankara.asit;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Build;
@@ -21,6 +15,10 @@ import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -38,7 +36,8 @@ public class SignUpActivity extends AppCompatActivity {
 
     private EditText Name,RollNumber,PhoneNumber,Email,Password;
     private CardView cvSignup;
-    private LottieAnimationView namelottie,rollnumberlottie,phonenumberlottie,emaillottie,passwordlottie,lottieCheckBox;
+    private TextView tvSignup;
+    private LottieAnimationView namelottie,rollnumberlottie,phonenumberlottie,emaillottie,passwordlottie,lottieCheckBox,Loading_Lottie;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     Firebasedb firebasedb;
@@ -58,6 +57,8 @@ public class SignUpActivity extends AppCompatActivity {
             window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
             window.setStatusBarColor(this.getResources().getColor(R.color.CustomFontColor));
         }
+        tvSignup = findViewById(R.id.tvSignup);
+        Loading_Lottie = findViewById(R.id.Loading_Lottie);
         namelottie = findViewById(R.id.namelottie);
         rollnumberlottie = findViewById(R.id.Rollnumberlottie);
         phonenumberlottie = findViewById(R.id.phonenumberlottie);
@@ -76,75 +77,6 @@ public class SignUpActivity extends AppCompatActivity {
         databaseReference = firebaseDatabase.getReference().child("cse");
         firebasedb = new Firebasedb();
 
-        Name.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                if(!s.toString().isEmpty()) {
-                    new Handler().postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            namelottie.setSpeed(1);
-                            namelottie.addAnimatorListener(new Animator.AnimatorListener() {
-                                                               @Override
-                                                               public void onAnimationStart(Animator animation) {
-
-                                                               }
-
-                                                               @Override
-                                                               public void onAnimationEnd(Animator animation) {
-                                                                   animation.pause();
-                                                               }
-
-                                                               @Override
-                                                               public void onAnimationCancel(Animator animation) {
-
-                                                               }
-
-                                                               @Override
-                                                               public void onAnimationRepeat(Animator animation) {
-                                                               }
-                                                           });
-                                    namelottie.playAnimation();
-                        }
-                    },4500);
-                }
-                if(s.toString().isEmpty()) {
-                    namelottie.setSpeed(-1);
-                    namelottie.playAnimation();
-                    namelottie.addAnimatorListener(new Animator.AnimatorListener() {
-                        @Override
-                        public void onAnimationStart(Animator animation) {
-
-                        }
-
-                        @Override
-                        public void onAnimationEnd(Animator animation) {
-                            animation.pause();
-                        }
-
-                        @Override
-                        public void onAnimationCancel(Animator animation) {
-
-                        }
-
-                        @Override
-                        public void onAnimationRepeat(Animator animation) {
-
-                        }
-                    });
-                }
-            }
-        });
         Password.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -158,36 +90,15 @@ public class SignUpActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        if(s.toString().length() > 10) {
+                if(s.toString().length() > 10) {
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
                             passwordlottie.setSpeed(1);
                             passwordlottie.playAnimation();
-                            passwordlottie.addAnimatorListener(new Animator.AnimatorListener() {
-                                @Override
-                                public void onAnimationStart(Animator animation) {
-
-                                }
-
-                                @Override
-                                public void onAnimationEnd(Animator animation) {
-                                    animation.pause();
-                                }
-
-                                @Override
-                                public void onAnimationCancel(Animator animation) {
-
-                                }
-
-                                @Override
-                                public void onAnimationRepeat(Animator animation) {
-                                    animation.pause();
-                                }
-                            });
                         }
-                    }
-                },1500);
+                    },2500);
+                }
             }
         });
         RollNumber.addTextChangedListener(new TextWatcher() {
@@ -203,36 +114,15 @@ public class SignUpActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        if(s.toString().startsWith("202H1") || s.toString().startsWith("212H") && s.toString().length() == 10){
+                if (s.toString().startsWith("202H1") || s.toString().startsWith("212H") && s.toString().length() == 10) {
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
                             rollnumberlottie.setSpeed(1);
                             rollnumberlottie.playAnimation();
-                            rollnumberlottie.addAnimatorListener(new Animator.AnimatorListener() {
-                                @Override
-                                public void onAnimationStart(Animator animation) {
-
-                                }
-
-                                @Override
-                                public void onAnimationEnd(Animator animation) {
-animation.pause();
-                                }
-
-                                @Override
-                                public void onAnimationCancel(Animator animation) {
-
-                                }
-
-                                @Override
-                                public void onAnimationRepeat(Animator animation) {
-
-                                }
-                            });
                         }
-                    }
-                },1500);
+                    },1500);
+                }
             }
         });
         PhoneNumber.addTextChangedListener(new TextWatcher() {
@@ -248,15 +138,15 @@ animation.pause();
 
             @Override
             public void afterTextChanged(Editable s) {
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
                         if(s.toString().length() >=10) {
-                            phonenumberlottie.setSpeed(1);
-                            phonenumberlottie.playAnimation();
+                            new Handler().postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    phonenumberlottie.setSpeed(1);
+                                    phonenumberlottie.playAnimation();
+                                }
+                            },2000);
                         }
-                    }
-                },1500);
             }
         });
         Email.addTextChangedListener(new TextWatcher() {
@@ -272,36 +162,16 @@ animation.pause();
 
             @Override
             public void afterTextChanged(Editable s) {
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        if(!s.toString().isEmpty()){
+                if (s.toString().endsWith("@gmail.com")) {
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
                             emaillottie.playAnimation();
                             emaillottie.setSpeed(1);
-                            emaillottie.addAnimatorListener(new Animator.AnimatorListener() {
-                                @Override
-                                public void onAnimationStart(Animator animation) {
-
-                                }
-
-                                @Override
-                                public void onAnimationEnd(Animator animation) {
-animation.pause();
-                                }
-
-                                @Override
-                                public void onAnimationCancel(Animator animation) {
-
-                                }
-
-                                @Override
-                                public void onAnimationRepeat(Animator animation) {
-
-                                }
-                            });
                         }
-                    }
-                },1500);
+                    },2000);
+
+                }
             }
         });
         cvSignup.setOnClickListener(new View.OnClickListener() {
@@ -340,15 +210,13 @@ animation.pause();
                     Toast.makeText(SignUpActivity.this, "Enter proper rollNumber", Toast.LENGTH_SHORT).show();
                 } else if(Name.getText().toString().contains(".")) {
                     Name.setError("Remove FullStop in name");
-                }else
-                {
+                } else {
                     CreateAccount(name, Rollnumber, email, phone, password);
                 }
-                if(tapcount == 1) {
-                    cvSignup.setClickable(false);
-                }
+
             }
         });
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
         cvSignup.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
@@ -366,7 +234,8 @@ animation.pause();
     }
     @Override
     public void onBackPressed() {
-        Toast.makeText(this, "wait", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(this,WelcomeActivity.class));
+        finish();
     }
 
     private void CreateAccount(String name , String RollNumber,String Email,String PhoneNumber,String Password) {
@@ -449,5 +318,4 @@ animation.pause();
                     }
                 });
             }
-
             }

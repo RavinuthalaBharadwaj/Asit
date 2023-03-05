@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/CustomBlack"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:lottie_rawRes="@raw/not_available"
+        android:layout_gravity="center"
+        app:lottie_autoPlay="true"
+        android:layout_marginTop="20dp"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Oops! 🥲 not available"
+        android:fontFamily="@font/montblack"
+        android:textColor="@color/homefragfont"
+        android:layout_marginTop="20dp"
+        android:textSize="18sp"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Look like this pdf not yet available, we notify you once its available "
+        android:fontFamily="@font/montbold"
+        android:layout_marginHorizontal="40dp"
+        android:gravity="center"
+        android:alpha="0.6"
+        android:layout_marginBottom="30dp"
+        android:textColor="@color/homefragfont"
+        android:layout_marginTop="10dp"
+        android:textSize="18sp"
+        android:layout_gravity="center"/>
+</LinearLayout>

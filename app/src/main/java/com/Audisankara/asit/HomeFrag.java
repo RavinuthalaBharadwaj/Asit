@@ -4,28 +4,15 @@ import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-import androidx.core.widget.NestedScrollView;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-
 import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.transition.AutoTransition;
 import android.transition.Transition;
 import android.transition.TransitionManager;
-import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -37,18 +24,27 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.cardview.widget.CardView;
+import androidx.core.widget.NestedScrollView;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.Audisankara.asit.Adaptors.SearchAdaptor;
 import com.Audisankara.asit.Adaptors.SearchAdaptorForHome;
-import com.Audisankara.asit.Fragments.NotificationFragmnet;
-import com.Audisankara.asit.Fragments.WebPageLoader;
+import com.Audisankara.asit.Models.HomeScreenViewPagerModel;
 import com.Audisankara.asit.Models.SearchModel;
 import com.Audisankara.asit.helper.Constant;
 import com.Audisankara.asit.helper.RecylerViewInterface;
 import com.Audisankara.asit.helper.Session;
-import com.bumptech.glide.Glide;
+import com.Audisankara.asit.objects.BottomSheets;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -59,6 +55,7 @@ import com.owl93.dpb.CircularProgressView;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Objects;
 
 public class HomeFrag extends Fragment implements RecylerViewInterface {
 
@@ -67,51 +64,159 @@ public class HomeFrag extends Fragment implements RecylerViewInterface {
     }
 
 
-    private CardView CvAttendance,CvTechTalk,CvSyllabus,CvResult,CvPreviousPapers,CvMaterials,CvReceiptUpload,CvUpdateOne,CvUpdateTwo,CvUpdateThree,CvUpdateFour;
+    private CardView CvAttendance,CvTechTalk,CvSyllabus,CvResult,CvPreviousPapers,CvMaterials,CvReceiptUpload;
     private TextView tvUsername,TotalTechTalkUploads,TotalReceipts,TotalAssignments;
     private CardView CvAssignmnets;
     private NestedScrollView scrollView;
     public static EditText etSearch;
-    private CardView cvSearch;
+    private CardView cvSearch,CvSpecialCard;
+    private ImageView imgdown;
+    private Handler handler;
     private RecyclerView searchRecycler;
     private SearchAdaptorForHome searchAdaptorForHome;
     private ArrayList<SearchModel> searchModelArrayList;
     private Dialog dialog;
+    private BottomSheetDialog bottomSheetDialog;
+    private SearchAdaptor adaptor;
     private RelativeLayout NotificationButtonLyt;
+    private LinearLayout invisiblleLytOfWeeklyAttendance;
+    private TextView invisibleTextOfWeeklyAttendance;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     private SwipeRefreshLayout swipeRefreshLayout;
     private CircularProgressView circularProgressView;
     private ProgressBar two,three,four;
     private ArrayList<String> DataOfClassesHeld;
+    private ArrayList<HomeScreenViewPagerModel> homeScreenViewPagerModelArrayList;
     public static LinearLayout InvisibleLyt;
     private ImageView imgprevious,imgmaterilas,updateone,updatetwo,updatethree,updatefour,MainImageCard,SmallCardOne,SmallCardTwo,LongCardOne,LongCardTwo;
     private ProgressBar pbClassesHeld,pbClassesAttended,pbClassesAbsents;
     private TextView tvClassesHeld,tvClassAttended,tvClassesAbsents;
+    private RelativeLayout TechTalkAvail,BooksAvail,ReceiptAvail,BooksAvailForAssign;
+    //for Subject cards
+    private CardView CvSubjectOne,CvSubjectTwo,CvSubjectThree,CvSubjectFour,CvSubjectFive,CvSubjectSix;
+    private TextView AsSubject1, AsSubject2, AsSubject3, AsSubject4, AsSubject5, AsSubject6, MSubject1,MSubject2,MSubject3,MSubject4,MSubject5,MSubject6;
     Session session ;
+    int count = 0;
+    @RequiresApi(api = Build.VERSION_CODES.S)
     @SuppressLint("ClickableViewAccessibility")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view =  inflater.inflate(R.layout.fragment_home_new_test, container, false);
 
+        session = new Session(requireActivity());
+        CvSpecialCard = view.findViewById(R.id.SpecialCard);
         etSearch = view.findViewById(R.id.etSearch);
         cvSearch = view.findViewById(R.id.search);
         InvisibleLyt = view.findViewById(R.id.InvisibleLyt);
         Animation animation = AnimationUtils.loadAnimation(view.getContext(), android.R.anim.slide_in_left);
         animation.setDuration(460);
+        bottomSheetDialog = new BottomSheetDialog(requireContext());
         RelativeLayout layout = view.findViewById(R.id.lytHome);
         layout.startAnimation(animation);
-
-        pbClassesHeld = view.findViewById(R.id.ProgressclassHeld);
-        pbClassesAttended = view.findViewById(R.id.ProgressclassAttended);
-        pbClassesAbsents = view.findViewById(R.id.ProgressAbsents);
-        tvClassesHeld = view.findViewById(R.id.tvHeld);
-        tvClassAttended = view.findViewById(R.id.tvAttended);
-        tvClassesAbsents = view.findViewById(R.id.tvAbsents);
-        CvAttendance = view.findViewById(R.id.cvAttendance);
+        firebaseDatabase = FirebaseDatabase.getInstance("https://audisankara-institute-default-rtdb.asia-southeast1.firebasedatabase.app/");
+        databaseReference = firebaseDatabase.getReference();
 
 
+        Dialog dialog = new Dialog(requireContext());
+        dialog.setContentView(R.layout.new_feautrea_dialouge);
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.setCancelable(false);
+        dialog.getWindow().setDimAmount(0.5f);
+        dialog.getWindow().getAttributes().windowAnimations = R.style.animation;
+        Dialog finalDialog = dialog;
+
+        Dialog dialog2 = new Dialog(requireContext());
+        dialog2.setContentView(R.layout.new_feautrea_dialouge_flow_2);
+        dialog2.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog2.setCancelable(false);
+        dialog2.getWindow().setDimAmount(0.5f);
+        dialog2.getWindow().getAttributes().windowAnimations = R.style.animation;
+        dialog.findViewById(R.id.cvNext).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finalDialog.dismiss();
+                dialog2.show();
+            }
+        });
+        dialog2.findViewById(R.id.TvFinish).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog2.dismiss();
+                session.setBoolean("intro_done",true);
+            }
+        });
+        if(session.getBoolean("intro_done")) {
+            dialog.dismiss();
+        }else{
+            dialog.show();
+        }
+
+        bottomSheetDialog.setContentView(R.layout.mid_exams_bottomsheet);
+        CvSpecialCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bottomSheetDialog.show();
+            }
+        });
+
+        //Bottom Sheet
+
+        CardView TimeTable = bottomSheetDialog.findViewById(R.id.CvTimeTable);
+        CardView SeatMap = bottomSheetDialog.findViewById(R.id.CvSeatMap);
+        Intent i1 = new Intent(requireActivity(),SyllabusViewerActivity.class);
+
+        TimeTable.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                databaseReference = firebaseDatabase.getReference().child("TimeTables").child("TimeTable");
+                databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if(String.valueOf(snapshot.getValue()).equals("null")) {
+                            BottomSheets.INSTANCE.notAvailableBottomSheet(requireActivity());
+                        }else{
+                            i1.putExtra("SyllabusLink",String.valueOf(snapshot.getValue()));
+                            startActivity(i1);
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+            }
+        });
+        SeatMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                databaseReference = firebaseDatabase.getReference().child("TimeTables").child("SeatMap");
+                databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if(String.valueOf(snapshot.getValue()).equals("null")) {
+                            BottomSheets.INSTANCE.notAvailableBottomSheet(requireContext());
+                        }else{
+                            i1.putExtra("SyllabusLink",String.valueOf(snapshot.getValue()));
+                            startActivity(i1);
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+            }
+        });
+
+
+
+        TechTalkAvail = view.findViewById(R.id.TechTalkaAvailabilty);
+        BooksAvail = view.findViewById(R.id.BooksAvailabilty);
+        ReceiptAvail = view.findViewById(R.id.ReceiptAvailabilty);
         two = view.findViewById(R.id.progresstwo);
         searchRecycler = view.findViewById(R.id.SearchRecyclerView);
         three = view.findViewById(R.id.progress3);
@@ -119,7 +224,6 @@ public class HomeFrag extends Fragment implements RecylerViewInterface {
         CvTechTalk = view.findViewById(R.id.CvTechTalk);
         TotalReceipts = view.findViewById(R.id.tvTotalReceipts);
         TotalTechTalkUploads = view.findViewById(R.id.TechTalkProgress);
-        circularProgressView = view.findViewById(R.id.HomeScreenDailyProgress);
         swipeRefreshLayout = view.findViewById(R.id.refreshlyt);
         scrollView = view.findViewById(R.id.homescroll);
         CvSyllabus = view.findViewById(R.id.cvSyllabus);
@@ -129,29 +233,40 @@ public class HomeFrag extends Fragment implements RecylerViewInterface {
         CvResult = view.findViewById(R.id.cvResults);
         CvAssignmnets = view.findViewById(R.id.cvAssignments);
 
-        CvUpdateOne = view.findViewById(R.id.cvUpdateOne);
-        CvUpdateTwo = view.findViewById(R.id.cvUpdateTwo);
-        CvUpdateThree = view.findViewById(R.id.cvUpdateThree);
-        CvUpdateFour = view.findViewById(R.id.cvUpdateFour);
+
 
 
         CvPreviousPapers = view.findViewById(R.id.cvPreviousPapers);
         CvMaterials = view.findViewById(R.id.cvMaterials);
-        imgprevious = view.findViewById(R.id.imgPrevios);
-        imgmaterilas = view.findViewById(R.id.imgMaterilas);
-        updateone = view.findViewById(R.id.updateone);
-        updatetwo = view.findViewById(R.id.updatetwo);
-        updatethree = view.findViewById(R.id.updatethree);
-        updatefour = view.findViewById(R.id.updatefour);
+        BooksAvailForAssign = view.findViewById(R.id.BooksAvailabiltyForAssig);
 
-
-        MainImageCard = view.findViewById(R.id.ImgMainCard);
         SmallCardOne = view.findViewById(R.id.SmallCardOne);
         SmallCardTwo = view.findViewById(R.id.SmallCardTwo);
         LongCardOne = view.findViewById(R.id.LongCardOne);
         LongCardTwo = view.findViewById(R.id.LongCardTwo);
         scrollView.setSmoothScrollingEnabled(true);
-        session = new Session(requireActivity());
+
+
+        CvSubjectOne = view.findViewById(R.id.CvSubjectOne);
+        CvSubjectTwo = view.findViewById(R.id.CvSubjectTwo);
+        CvSubjectThree = view.findViewById(R.id.CvSubjectThree);
+        CvSubjectFour = view.findViewById(R.id.CvSubjectFour);
+        CvSubjectFive = view.findViewById(R.id.CvSubjectFive);
+        CvSubjectSix = view.findViewById(R.id.CvSubjectSix);
+
+        AsSubject1 = view.findViewById(R.id.SubjectOneAvailAssign);
+        AsSubject2 = view.findViewById(R.id.SubjectTwoAvailAssign);
+        AsSubject3 = view.findViewById(R.id.SubjectThreeAvailAssign);
+        AsSubject4 = view.findViewById(R.id.SubjectFourAvailAssign);
+        AsSubject5 = view.findViewById(R.id.SubjectFiveAvailAssign);
+        AsSubject6 = view.findViewById(R.id.SubjectSixAvailAssign);
+
+        MSubject1 = view.findViewById(R.id.SubjectOneAvailMater);
+        MSubject2 = view.findViewById(R.id.SubjectTwoAvailMater);
+        MSubject3 = view.findViewById(R.id.SubjectThreeAvailMater);
+        MSubject4 = view.findViewById(R.id.SubjectFourAvailMater);
+        MSubject5 = view.findViewById(R.id.SubjectFiveAvailMater);
+        MSubject6 = view.findViewById(R.id.SubjectSixAvailMater);
 
         NotificationButtonLyt = view.findViewById(R.id.lytNotification);
 
@@ -162,7 +277,6 @@ public class HomeFrag extends Fragment implements RecylerViewInterface {
         four.animate();
 
         dialog = new Dialog(requireActivity());
-        dialog.setContentView(R.layout.updates_dialog);
         dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         dialog.setCancelable(true);
 
@@ -184,6 +298,7 @@ public class HomeFrag extends Fragment implements RecylerViewInterface {
                     TransitionManager.beginDelayedTransition(MainActivity.chipNavigationBar);
                 }
                 if(!s.toString().isEmpty() && s.toString().length() >= 2 ){
+                    fliter(s.toString());
                     TransitionManager.beginDelayedTransition(cvSearch,new AutoTransition().addListener(new Transition.TransitionListener() {
                         @Override
                         public void onTransitionStart(Transition transition) {
@@ -214,6 +329,7 @@ public class HomeFrag extends Fragment implements RecylerViewInterface {
                         }
                     }));
                     InvisibleLyt.setVisibility(View.VISIBLE);
+
                 }
                 if(s.toString().isEmpty()) {
                     TransitionManager.endTransitions(MainActivity.chipNavigationBar);
@@ -224,6 +340,75 @@ public class HomeFrag extends Fragment implements RecylerViewInterface {
             }
         });
 
+
+        //Subject cvs
+
+        Intent i = new Intent(requireActivity(),BooksMain.class);
+        Bundle b = new Bundle();
+        CvSubjectOne.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                b.putString("subjectname","Cyber Security");
+                i.putExtras(b);
+                startActivity(i);
+            }
+        });
+        CvSubjectTwo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                b.putString("subjectname","Data Mining");
+                i.putExtras(b);
+                startActivity(i);
+            }
+        });
+        CvSubjectThree.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                b.putString("subjectname","FLAT");
+                i.putExtras(b);
+                startActivity(i);
+            }
+        });
+        CvSubjectFour.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                b.putString("subjectname","Uhv");
+                i.putExtras(b);
+                startActivity(i);
+            }
+        });
+        CvSubjectFive.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                b.putString("subjectname", "Computer Networks");
+                i.putExtras(b);
+                startActivity(i);
+            }
+        });
+        CvSubjectSix.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                b.putString("subjectname", "Control System");
+                i.putExtras(b);
+                startActivity(i);
+            }
+        });
+
+        try {
+            AsSubject1.setText(session.getData("Cyber"));
+            AsSubject2.setText(session.getData("DM"));
+            AsSubject3.setText(session.getData("Flat"));
+            AsSubject4.setText(session.getData("Uh"));
+            AsSubject5.setText(session.getData("Computer"));
+            AsSubject6.setText(session.getData("Control"));
+        }catch (Exception E) {
+            AsSubject1.setText("0");
+            AsSubject2.setText("0");
+            AsSubject3.setText("0");
+            AsSubject4.setText("0");
+            AsSubject5.setText("0");
+            AsSubject6.setText("0");
+        }
         //Recycler view
         searchRecycler.setLayoutManager(new LinearLayoutManager(view.getContext()));
         searchModelArrayList = new ArrayList<>();
@@ -235,45 +420,10 @@ public class HomeFrag extends Fragment implements RecylerViewInterface {
         searchModelArrayList.add(new SearchModel("Assignments","Writting assignmnets is now\neasier than before","Academics",R.color.CustomPurple));
         searchModelArrayList.add(new SearchModel("Results","One step all it takes\nTo see your HardWork","Scoring",R.color.teal));
         searchAdaptorForHome = new SearchAdaptorForHome(searchModelArrayList,this);
-        searchRecycler.setAdapter(searchAdaptorForHome);
         searchRecycler.setHasFixedSize(true);
+        searchRecycler.setAdapter(searchAdaptorForHome);
 
 
-        //Glide things
-        Glide.with(requireContext())
-                .load(getResources().getDrawable(R.drawable.mesh8))
-                .into(imgprevious);
-        Glide.with(requireContext())
-                .load(getResources().getDrawable(R.drawable.mesh8))
-                .into(imgmaterilas);
-        Glide.with(requireContext())
-                .load(getResources().getDrawable(R.drawable.update4))
-                .into(updateone);
-        Glide.with(requireContext())
-                .load(getResources().getDrawable(R.drawable.update3))
-                .into(updatetwo);
-        Glide.with(requireContext())
-                .load(getResources().getDrawable(R.drawable.update5))
-                .into(updatethree);
-        Glide.with(requireContext())
-                .load(getResources().getDrawable(R.drawable.update4))
-                .into(updatefour);
-        Glide.with(requireContext())
-                .load(getResources().getDrawable(R.drawable.meshten))
-                .into(MainImageCard);
-        Glide.with(requireContext())
-                .load(getResources().getDrawable(R.drawable.mesh9))
-                .into(SmallCardOne);
-        Glide.with(requireContext())
-                .load(getResources().getDrawable(R.drawable.mesh12))
-                .into(SmallCardTwo);
-        Glide.with(requireContext())
-                .load(getResources().getDrawable(R.drawable.mesh13))
-                .into(LongCardOne);
-        Glide.with(requireContext())
-                .load(getResources().getDrawable(R.drawable.meshten))
-                .into(LongCardTwo);
-        
         //firebase 
         firebaseDatabase = FirebaseDatabase.getInstance("https://audisankara-institute-default-rtdb.asia-southeast1.firebasedatabase.app/");
         databaseReference = firebaseDatabase.getReference();
@@ -295,7 +445,6 @@ public class HomeFrag extends Fragment implements RecylerViewInterface {
                         for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                             data.add(String.valueOf(dataSnapshot.getValue()));
                         }
-                        RetriveClassesHeldData();
                     }
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
@@ -321,38 +470,6 @@ public class HomeFrag extends Fragment implements RecylerViewInterface {
         });
 
         //refreshlyt
-        swipeRefreshLayout.setRefreshing(true);
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    //for attendance
-                    circularProgressView.animateProgressChange(Float.parseFloat(data.get(2)), 5000);
-                    circularProgressView.setText(data.get(2).concat("/7"));
-                    //for Vertical Progress
-                    //data.get(0) is for absents ..
-                    //data.get(1) is for presents ..
-                    //data.get(2) is for presents but for circular progress
-                    pbClassesAttended.setProgress(Integer.parseInt(data.get(1)),true);
-                    tvClassAttended.setText(data.get(1));
-                    pbClassesAbsents.setProgress(Integer.parseInt(data.get(0)),true);
-                    tvClassesAbsents.setText(data.get(0));
-                    pbClassesHeld.setProgress(Integer.parseInt(DataOfClassesHeld.get(0)),true);
-                    tvClassesHeld.setText(DataOfClassesHeld.get(0));
-                }catch (Exception e) {
-                    System.out.println(e.getMessage());
-                    circularProgressView.animateProgressChange(2, 5000);
-                    circularProgressView.setText("N/A");
-                    pbClassesAttended.setProgress(3,true);
-                    tvClassAttended.setText("N/A");
-                    pbClassesAbsents.setProgress(2,true);
-                    tvClassesAbsents.setText("N/A");
-                    pbClassesHeld.setProgress(Integer.parseInt("0"),true);
-                    tvClassesHeld.setText("0");
-                }
-                swipeRefreshLayout.setRefreshing(false);
-            }
-        },3000);
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -362,40 +479,10 @@ public class HomeFrag extends Fragment implements RecylerViewInterface {
                 if(!etSearch.getText().toString().equals("")) {
                     etSearch.getText().clear();
                 }
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        try {
-                            circularProgressView.animateProgressChange(Float.parseFloat(data.get(2)),5000);
-                            circularProgressView.setText(data.get(2).concat("/7"));
-
-                            pbClassesAttended.setProgress(Integer.parseInt(data.get(1)),true);
-                            tvClassAttended.setText(data.get(1));
-                            pbClassesAbsents.setProgress(Integer.parseInt(data.get(0)),true);
-                            tvClassesAbsents.setText(data.get(0));
-
-                            pbClassesHeld.setProgress(Integer.parseInt(DataOfClassesHeld.get(0)),true);
-                            tvClassesHeld.setText(DataOfClassesHeld.get(0));
-                        }catch (Exception e) {
-                            e.printStackTrace();
-                        }finally {
-                            if(data.isEmpty() && DataOfClassesHeld.isEmpty()) {
-                                circularProgressView.animateProgressChange(4,5000);
-                                circularProgressView.setText("N/A");
-                                pbClassesAttended.setProgress(3,true);
-                                tvClassAttended.setText("N/A");
-                                pbClassesAbsents.setProgress(2,true);
-                                tvClassesAbsents.setText("N/A");
-                                pbClassesHeld.setProgress(Integer.parseInt("0"),true);
-                                tvClassesHeld.setText("0");
-                            }
-                        }
-                        swipeRefreshLayout.setRefreshing(false);
-                    }
-                },3000);
+                FetchAvailAssign();
+                swipeRefreshLayout.setRefreshing(false);
             }
         });
-
 
         if (Build.VERSION.SDK_INT >= 21) {
             Window window = requireActivity().getWindow();
@@ -405,24 +492,6 @@ public class HomeFrag extends Fragment implements RecylerViewInterface {
         }
 
         tvUsername.setText(session.getData(Constant.NAME));
-
-
-        CvSyllabus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MainActivity.fm.beginTransaction().replace(R.id.container,new Syllabus(),"syllabusfrag")
-                                        .addToBackStack(null)
-                                                .commit();
-            }
-        });
-        CvAttendance.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MainActivity.fm.beginTransaction().replace(R.id.container,new AttendaceFrag(),"attendancefrag")
-                        .addToBackStack(null)
-                        .commit();
-            }
-        });
         CvReceiptUpload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -456,7 +525,10 @@ public class HomeFrag extends Fragment implements RecylerViewInterface {
         CvResult.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MainActivity.fm.beginTransaction().replace(R.id.container,new WebPageLoader()).addToBackStack("null").commit();
+                Intent i = new Intent(requireContext(),WebPage.class);
+                i.putExtra("LinkTo" +
+                        "Load","http://202.53.75.138:2001/asit/student.php?%20=%20student%20results%20for%20ASIT");
+                startActivity(i);
             }
         });
         CvTechTalk.setOnClickListener(new View.OnClickListener() {
@@ -465,93 +537,48 @@ public class HomeFrag extends Fragment implements RecylerViewInterface {
                 MainActivity.fm.beginTransaction().replace(R.id.container,new TechTalkFrag()).addToBackStack(null).commit();
             }
         });
-        CvUpdateOne.setOnClickListener(new View.OnClickListener() {
-            private TextView Tile,Des;
-            private ImageView imgUpdate;
-            @SuppressLint({"CheckResult", "UseCompatLoadingForDrawables"})
-            @Override
-            public void onClick(View v) {
-                Tile = dialog.findViewById(R.id.tvtitle);
-                Des = dialog.findViewById(R.id.updatedes);
-                imgUpdate = dialog.findViewById(R.id.imgUpdate);
-                Glide.with(dialog.getContext())
-                                .load(getResources().getDrawable(R.drawable.update4));
-                Tile.setText("Thiry year classes for Asit\\nStudents are about to start soon");
-                Des.setText("After sucessfull Completeion of 2nd year ,3rd year class for 20H batch are\\nabout to start soon.");
-                dialog.show();
-            }
-        });
         CvAssignmnets.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(requireActivity(),BooksActivity.class));
             }
         });
-        view.findViewById(R.id.AttendanceCard).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MainActivity.fm.beginTransaction().replace(R.id.container,new AttendaceFrag()).addToBackStack("null").commit();
-            }
-        });
+
         NotificationButtonLyt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 MainActivity
                         .fm
                         .beginTransaction()
-                        .replace(R.id.container,new NotificationFragmnet())
                         .addToBackStack("null")
                         .commit();
             }
         });
+        FetchAvailAssign();
         return view;
     }
 
-
-    private void RetriveClassesHeldData() {
-        databaseReference = firebaseDatabase
-                .getReference()
-                .child("CONSTANTS");
-        DataOfClassesHeld = new ArrayList<>();
-        databaseReference
-                .addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        for(DataSnapshot ds: snapshot.getChildren()) {
-                            DataOfClassesHeld.add(String.valueOf(ds.getValue()));
-                        }
-                        System.out.println(DataOfClassesHeld.size());
-                        session.setData("held",DataOfClassesHeld.get(0));
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
-    }
 
     @Override
     public void onItemClick(int position, Context context) {
 
         switch (position) {
-            case 0:
             case 1:
+                MainActivity.fm.beginTransaction().replace(R.id.container,new UploadReceipt()).addToBackStack(null).commit();
+                break;
             case 2:
+            case 0:
             case 3:
+            case 5:
                 startActivity(new Intent(requireContext(),BooksActivity.class));
                 break;
             case 4:
                 MainActivity.fm.beginTransaction().replace(R.id.container,new AttendaceFrag()).addToBackStack(null).commit();
                 break;
-            case 5:
-                Uri uri = Uri.parse("http://202.53.75.138:2001/asit/student.php?%20=%20student%20results%20for%20ASIT");
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(uri);
-                startActivity(i);
-                break;
             case 6:
-                MainActivity.fm.beginTransaction().replace(R.id.container,new UploadReceipt()).addToBackStack(null).commit();
+                Intent i = new Intent(requireContext(),WebPage.class);
+                i.putExtra("LinkTOLoad","http://202.53.75.138:2001/asit/student.php?%20=%20student%20results%20for%20ASIT");
+                startActivity(i);
                 break;
         }
     }
@@ -564,21 +591,160 @@ public class HomeFrag extends Fragment implements RecylerViewInterface {
         four.setProgress(session.getInt("ClickedAssign"),true);
         TotalAssignments.setText(String.valueOf(session.getInt("ClickedAssign")));
     }
+    private void FetchAvailAssign() {
+        ArrayList<String> list = new ArrayList<>();
+        databaseReference = firebaseDatabase.getReference().child("OptionsAvailabilitys").child("HomeScreen").child("TotalAssign");
+                        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                for(DataSnapshot ds : snapshot.getChildren()) {
+                                    list.add(String.valueOf(ds.getValue()));
+                                    System.out.println(list.size()+"assign data");
+                                }
+                                AsSubject1.setText(String.valueOf(list.get(1)));
+                                AsSubject2.setText(String.valueOf(list.get(2)));
+                                AsSubject3.setText(String.valueOf(list.get(3)));
+                                AsSubject4.setText(String.valueOf(list.get(4)));
+                                AsSubject5.setText(String.valueOf(list.get(0)));
+                                AsSubject6.setText(String.valueOf(list.get(5)));
+                            }
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });
+        databaseReference = firebaseDatabase.getReference().child("OptionsAvailabilitys").child("HomeScreen").child("TotalMate");
+        ArrayList<String> list1 = new ArrayList<>();
+        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot ds : snapshot.getChildren()) {
+                    list1.add(String.valueOf(ds.getValue()));
+                    System.out.println(list.size()+"assign data");
+                }
+                MSubject1.setText(String.valueOf(list1.get(1)));
+                MSubject2.setText(String.valueOf(list1.get(2)));
+                MSubject3.setText(String.valueOf(list1.get(3)));
+                MSubject4.setText(String.valueOf(list1.get(4)));
+                MSubject5.setText(String.valueOf(list1.get(0)));
+                MSubject6.setText(String.valueOf(list1.get(5)));
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
     @Override
     public void onResume() {
         super.onResume();
         etSearch.getText().clear();
         etSearch.setActivated(false);
         etSearch.setCursorVisible(false);
-        RetriveClassesHeldData();
+        tvUsername.setText(session.getData(Constant.NAME));
         ProgressBars();
+        GetAvailStatusFromFb();
+        FetchAvailAssign();
     }
 
     @Override
     public void onStart() {
         super.onStart();
-        RetriveClassesHeldData();
         ProgressBars();
+        GetAvailStatusFromFb();
+    }
+    private void fliter(String toString) {
+        ArrayList<SearchModel> filteredlist = new ArrayList<SearchModel>();
+        for(SearchModel item :searchModelArrayList ) {
+            if(item.getName().toLowerCase().contains(toString.toLowerCase())) {
+                filteredlist.add(item);
+            }
+        }
+
+        if(filteredlist.isEmpty()) {
+            Toast.makeText(requireContext(), "not found", Toast.LENGTH_SHORT).show();
+        }else{
+            searchAdaptorForHome.filterList(filteredlist);
+        }
     }
 
+    private void GetAvailStatusFromFb() {
+        databaseReference = firebaseDatabase.getReference().child("OptionsAvailabilitys").child("HomeScreen").child("TechTalk");
+        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(Objects.equals(snapshot.getValue(Boolean.class), true)) {
+                    TechTalkAvail.setVisibility(View.GONE);
+                    CvTechTalk.setClickable(true);
+                }else{
+                    TechTalkAvail.setVisibility(View.VISIBLE);
+                    CvTechTalk.setClickable(false);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+        databaseReference = firebaseDatabase.getReference().child("OptionsAvailabilitys").child("HomeScreen").child("Books");
+        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(Objects.equals(snapshot.getValue(Boolean.class), true)) {
+                    BooksAvail.setVisibility(View.GONE);
+                    BooksAvailForAssign.setVisibility(View.GONE);
+                    CvAssignmnets.setClickable(true);
+                    CvMaterials.setClickable(true);
+                    CvSyllabus.setClickable(true);
+                    CvPreviousPapers.setClickable(true);
+                }else{
+                    BooksAvail.setVisibility(View.VISIBLE);
+                    BooksAvailForAssign.setVisibility(View.VISIBLE);
+                    CvAssignmnets.setClickable(false);
+                    CvMaterials.setClickable(false);
+                    CvSyllabus.setClickable(false);
+                    CvPreviousPapers.setClickable(false);
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+        databaseReference = firebaseDatabase.getReference().child("OptionsAvailabilitys").child("HomeScreen").child("Receipt");
+        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(Objects.equals(snapshot.getValue(Boolean.class), true)) {
+                    ReceiptAvail.setVisibility(View.GONE);
+                    CvReceiptUpload.setClickable(true);
+                }else{
+                    ReceiptAvail.setVisibility(View.VISIBLE);
+                    CvReceiptUpload.setClickable(false);
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        databaseReference = firebaseDatabase.getReference().child("OptionsAvailabilitys").child("HomeScreen").child("SemesterCard");
+        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(Objects.equals(snapshot.getValue(Boolean.class), true)) {
+                    CvSpecialCard.setVisibility(View.VISIBLE);
+                }else{
+                    CvSpecialCard.setVisibility(View.GONE);
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
 }

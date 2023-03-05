@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="@color/CustomBlack">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Introducing you the \nSubject Cards"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:fontFamily="@font/montblack"
+                android:textColor="@color/homefragfont"
+                android:layout_marginTop="20dp"
+                android:textSize="22sp"/>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/CvSubjectOne"
+                android:layout_width="190dp"
+                android:layout_height="250dp"
+                app:cardBackgroundColor="#FBEC9D"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                app:cardCornerRadius="10dp" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        app:cardCornerRadius="100dp"
+                        android:layout_marginTop="30dp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="#FDF7D8"
+                        android:layout_marginStart="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="CS"
+                            android:textColor="@color/black"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textSize="18sp"
+                            android:fontFamily="@font/montblack"/>
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cyber Security"
+                        android:textColor="@color/black"
+                        android:singleLine="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/montblack"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Semester - v"
+                        android:textColor="@color/black"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="5dp"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/montsemibold"/>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="A - "
+                            android:layout_marginStart="20dp"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/montbold"/>
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="00dp"
+                            app:cardCornerRadius="100dp"
+                            app:cardBackgroundColor="#FDF7D8"
+                            app:cardElevation="0dp">
+
+                            <TextView
+                                android:id="@+id/SubjectOneAvailAssign"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="4"
+                                android:gravity="center"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                android:fontFamily="@font/montbold"/>
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="M - "
+                            android:layout_marginStart="20dp"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/montbold"/>
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="00dp"
+                            app:cardCornerRadius="100dp"
+                            app:cardBackgroundColor="#FDF7D8"
+                            app:cardElevation="0dp">
+
+                            <TextView
+                                android:id="@+id/SubjectOneAvailMater"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="0"
+                                android:gravity="center"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                android:fontFamily="@font/montbold"/>
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montbold"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="Now navigating to subject \nis easier then before ."
+                android:textAlignment="center"
+                android:textSize="18sp">
+            </TextView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvNext"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="100dp"
+                android:layout_marginBottom="20dp"
+                app:cardBackgroundColor="#FBEC9D">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_baseline_arrow_forward_24"/>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </FrameLayout>
+
+</androidx.cardview.widget.CardView>

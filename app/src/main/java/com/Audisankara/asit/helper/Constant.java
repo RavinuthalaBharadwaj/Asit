@@ -6,6 +6,8 @@ public class Constant {
     public static final String ROLLNUMBER = "rollnumber";
     public static final String PHONENUMBER = "phonenumber";
     public static final String PASSWORD = "password";
+    public static final String UPDATENAME = "name";
+
 
 
     public static final String ATTENDANCEPRESENT = "presentdays";

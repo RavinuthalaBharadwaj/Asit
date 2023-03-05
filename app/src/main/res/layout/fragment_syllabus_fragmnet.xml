@@ -25,49 +25,66 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp">
+                android:layout_height="60dp"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginTop="30dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Syllabus"
-                    android:fontFamily="@font/oboardfont"
+                    android:layout_alignParentStart="true"
                     android:layout_centerInParent="true"
-                    android:textSize="16sp"
-                    android:textColor="@color/homefragfont"/>
+                    android:fontFamily="@font/montbold"
+                    android:text="Syllabus"
+                    android:textColor="@color/homefragfont"
+                    android:textSize="18sp" />
             </RelativeLayout>
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_marginHorizontal="30dp"
-                app:cardCornerRadius="15dp"
-                app:cardBackgroundColor="#20575757"
-                android:layout_marginTop="20dp">
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cvSyllabus"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvSyllabus"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="13dp">
+
+                <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    app:cardCornerRadius="13dp"
-                    app:cardBackgroundColor="#743C3C3C"
-                    android:layout_margin="10dp">
+                    android:scaleType="centerCrop"
+                    android:src="#D6C3C9" />
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerInParent="true"
-                            android:fontFamily="@font/oboardfont"
-                            android:text="R20 Regulation"
-                            android:textColor="@color/homefragfont"
-                            android:textSize="15sp" />
-                    </RelativeLayout>
-                </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/montbold"
+                        android:text="Semester One"
+                        android:textColor="@color/Homefragback"
+                        android:textSize="18sp" />
+                </RelativeLayout>
             </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/montsemibold"
+                android:text="Swipe to see more"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_baseline_arrow_forward_30"/>
         </LinearLayout>
 
     </ScrollView>

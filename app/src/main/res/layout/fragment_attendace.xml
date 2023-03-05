@@ -76,7 +76,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="15dp"
                             android:layout_marginTop="15dp"
-                            android:fontFamily="@font/inter"
+                            android:fontFamily="@font/montbold"
                             android:layout_marginVertical="20dp"
                             android:text="Welcome"
                             android:alpha="0.7"
@@ -101,7 +101,7 @@
                             android:layout_marginStart="30dp"
                             android:layout_marginTop="5dp"
                             android:textSize="13sp"
-                            android:fontFamily="@font/workmedium"
+                            android:fontFamily="@font/montsemibold"
                             android:textColor="@color/homefragfont"/>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -124,7 +124,7 @@
                     android:textColor="@color/homefragfont"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="10dp"
-                    android:fontFamily="@font/workmedium"
+                    android:fontFamily="@font/montsemibold"
                     android:textSize="16sp"/>
 
                 <androidx.cardview.widget.CardView
@@ -146,7 +146,6 @@
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@drawable/meshten"
                             android:scaleType="centerCrop"/>
 
                         <TextView
@@ -197,7 +196,7 @@
                     android:textColor="@color/homefragfont"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="15dp"
-                    android:fontFamily="@font/workmedium"
+                    android:fontFamily="@font/montbold"
                     android:textSize="16sp"/>
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
@@ -219,7 +218,6 @@
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@drawable/mesh14"
                             android:scaleType="centerCrop"/>
 
                         <LinearLayout
@@ -244,7 +242,7 @@
                                     android:textColor="@color/Homefragback"
                                     android:textSize="16sp"
                                     android:layout_marginTop="5dp"
-                                    android:fontFamily="@font/hel_bold_round"/>
+                                    android:fontFamily="@font/montbold"/>
 
                                 <TextView
                                     android:id="@+id/tvHeld"
@@ -254,7 +252,7 @@
                                     android:textColor="@color/Homefragback"
                                     android:textSize="16sp"
                                     android:layout_marginTop="5dp"
-                                    android:fontFamily="@font/hel_bold_round"/>
+                                    android:fontFamily="@font/montbold"/>
 
                                 <ProgressBar
                                     android:id="@+id/pbHeld"
@@ -283,7 +281,7 @@
                                     android:textColor="@color/Homefragback"
                                     android:textSize="16sp"
                                     android:layout_marginTop="5dp"
-                                    android:fontFamily="@font/hel_bold_round"/>
+                                    android:fontFamily="@font/montbold"/>
 
                                 <TextView
                                     android:id="@+id/tvAttended"
@@ -293,7 +291,7 @@
                                     android:textColor="@color/Homefragback"
                                     android:textSize="16sp"
                                     android:layout_marginTop="5dp"
-                                    android:fontFamily="@font/hel_bold_round"/>
+                                    android:fontFamily="@font/montbold"/>
 
                                 <ProgressBar
                                     android:id="@+id/pbAttended"
@@ -323,7 +321,7 @@
                                     android:textColor="@color/Homefragback"
                                     android:textSize="16sp"
                                     android:layout_marginTop="5dp"
-                                    android:fontFamily="@font/hel_bold_round"/>
+                                    android:fontFamily="@font/montbold"/>
 
                                 <TextView
                                     android:id="@+id/tvSkipped"
@@ -333,7 +331,7 @@
                                     android:textColor="@color/Homefragback"
                                     android:textSize="16sp"
                                     android:layout_marginTop="5dp"
-                                    android:fontFamily="@font/hel_bold_round"/>
+                                    android:fontFamily="@font/montbold"/>
 
                                 <ProgressBar
                                     android:id="@+id/pbSkipped"
@@ -369,7 +367,7 @@
                     android:layout_marginHorizontal="20dp"
                     android:layout_marginTop="5dp"
                     android:textSize="15sp"
-                    android:fontFamily="@font/workmedium"
+                    android:fontFamily="@font/montsemibold"
                     android:textColor="@color/homefragfont"
                     android:alpha="0.4"/>
 
@@ -381,7 +379,7 @@
                     android:alpha="0.9"
                     android:layout_gravity="center"
                     android:text="so in order to gain 75% of attendance\nYou need to attend 75% of 125 classes\nmeans you need to 12 days out of 15 days\nto achieve your 75 percent"
-                    android:fontFamily="@font/hel_bold_round"
+                    android:fontFamily="@font/montbold"
                     android:textSize="15sp"
                     android:layout_marginBottom="30dp"
                     android:textColor="@color/homefragfont"

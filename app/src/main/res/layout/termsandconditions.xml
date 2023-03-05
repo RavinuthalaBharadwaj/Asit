@@ -26,20 +26,12 @@
 
         </TextView>
 
-        <com.airbnb.lottie.LottieAnimationView
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_marginTop="10dp"
-            app:lottie_autoPlay="true"
-            app:lottie_url="https://assets8.lottiefiles.com/packages/lf20_cmxmy8p4.json">
-        </com.airbnb.lottie.LottieAnimationView>
-
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cvAgree"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="0dp"
             app:cardCornerRadius="10dp"
             app:cardBackgroundColor="@color/Homefragback"
             android:layout_marginHorizontal="30dp">

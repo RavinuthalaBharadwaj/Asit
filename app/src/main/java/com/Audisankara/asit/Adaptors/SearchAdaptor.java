@@ -7,18 +7,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.Audisankara.asit.Models.MaterialModel;
-import com.Audisankara.asit.R;
 import com.Audisankara.asit.Models.SearchModel;
+import com.Audisankara.asit.R;
 import com.Audisankara.asit.helper.RecylerViewInterface;
-import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
@@ -47,7 +44,7 @@ public class SearchAdaptor extends RecyclerView.Adapter<SearchAdaptor.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Animation animation = AnimationUtils.loadAnimation(holder.itemView.getContext(), android.R.anim.slide_in_left);
+        Animation animation = AnimationUtils.loadAnimation(holder.itemView.getContext(), android.R.anim.fade_in);
         SearchModel model = SearchModelArrayList.get(position);
         animation.setDuration(600);
         holder.itemView.startAnimation(animation);
@@ -69,7 +66,6 @@ public class SearchAdaptor extends RecyclerView.Adapter<SearchAdaptor.ViewHolder
 
         private final TextView Name;
         private final TextView Description;
-        private final ImageView image;
         private final CardView CvCategory;
         private final TextView TvCategory;
         public ViewHolder(View itemview,RecylerViewInterface recylerViewInterface) {
@@ -77,7 +73,6 @@ public class SearchAdaptor extends RecyclerView.Adapter<SearchAdaptor.ViewHolder
             Context context = itemview.getContext();
             Name = itemview.findViewById(R.id.SearchViewName);
             Description = itemview.findViewById(R.id.SearcViewDescription);
-            image = itemview.findViewById(R.id.SearchViewImage);
             CvCategory = itemview.findViewById(R.id.CvCategory);
             TvCategory = itemview.findViewById(R.id.TvCategory);
             itemview.setOnClickListener(new View.OnClickListener() {

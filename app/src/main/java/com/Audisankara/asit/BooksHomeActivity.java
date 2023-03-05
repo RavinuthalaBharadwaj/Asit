@@ -1,24 +1,22 @@
 package com.Audisankara.asit;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+
 public class BooksHomeActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private TextView SubjectOne,SubjectTwo,SubjectThree,SubjectFour,SubjectFive;
+    private TextView SubjectOne,SubjectTwo,SubjectThree,SubjectFour,SubjectFive,SubjectSix;
     private CardView lytSubjectOne,lytSubjectTwo,lytSubjectThree,lytSubjectFour,lytSubjectFive,lytSubjectSix;
     Bundle bundle;
 
@@ -31,7 +29,7 @@ public class BooksHomeActivity extends AppCompatActivity implements View.OnClick
         SubjectThree = findViewById(R.id.SubjectThree);
         SubjectFour = findViewById(R.id.SubjectFour);
         SubjectFive = findViewById(R.id.SubjectFive);
-
+        SubjectSix = findViewById(R.id.SubjectSix);
         if (Build.VERSION.SDK_INT >= 21) {
             Window window = this.getWindow();
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
@@ -48,6 +46,7 @@ public class BooksHomeActivity extends AppCompatActivity implements View.OnClick
         SubjectThree.setText(bundle.getString("SubjectThree"));
         SubjectFour.setText(bundle.getString("SubjectFour"));
         SubjectFive.setText(bundle.getString("SubjectFive"));
+        SubjectSix.setText(bundle.getString("SubjectSix"));
 
         lytSubjectOne = findViewById(R.id.cvSubjectOne);
         lytSubjectTwo = findViewById(R.id.cvSubjectTwo);
@@ -70,44 +69,65 @@ public class BooksHomeActivity extends AppCompatActivity implements View.OnClick
         switch (v.getId()) {
             case R.id.cvSubjectOne:
                 //for syllabus
-                bundle.putString("subjectname","Cyber Security");
+                if(bundle.getString("SubjectOne").equals("Data base\nManagement System's")){
+                    bundle.putString("subjectname","DBMS");
+                }else {
+                    bundle.putString("subjectname","Cyber Security");
+                }
                 i = new Intent(BooksHomeActivity.this,BooksMain.class);
                 i.putExtras(bundle);
                 startActivity(i);
                 break;
             case R.id.cvSubjectTwo:
-                bundle.putString("subjectname","FLAT");
+                if(bundle.getString("SubjectTwo").equals("Software Engineering")) {
+                    bundle.putString("subjectname","SE");
+                }else{
+                    bundle.putString("subjectname","FLAT");
+                }
                 i = new Intent(BooksHomeActivity.this,BooksMain.class);
                 i.putExtras(bundle);
                 startActivity(i);
                 break;
             case R.id.cvSubjectThree:
-                bundle.putString("subjectname","Control System");
-                bundle.putString("Syllabuslink","link2");
+                if(bundle.getString("SubjectThree").equals("Java")) {
+                    bundle.putString("subjectname","JAVA");
+                }else {
+                    bundle.putString("subjectname", "Control System");
+                }
                 i = new Intent(BooksHomeActivity.this,BooksMain.class);
                 i.putExtras(bundle);
                 startActivity(i);
                 break;
             case R.id.cvSubjectFour:
-                bundle.putString("subjectname","Data Mining");
-                bundle.putString("Syllabuslink","link3");
+                if(bundle.getString("SubjectFour").equals("Ps & Nm")) {
+                    bundle.putString("subjectname","PSNM");
+                }else{
+                    bundle.putString("subjectname","Data Mining");
+                }
                 i = new Intent(BooksHomeActivity.this,BooksMain.class);
                 i.putExtras(bundle);
                 startActivity(i);
                 break;
             case R.id.cvSubjectFive:
-                bundle.putString("subjectname","Computer Networks");
-                bundle.putString("Syllabuslink","link4");
+                if(bundle.getString("SubjectFive").equals("Computer Architecture\nOrganization")) {
+                    bundle.putString("subjectname","COA");
+                }else {
+                    bundle.putString("subjectname", "Computer Networks");
+                }
                 i = new Intent(BooksHomeActivity.this,BooksMain.class);
                 i.putExtras(bundle);
                 startActivity(i);
                 break;
             case R.id.cvSubjectSix:
-                bundle.putString("subjectname","Uhv");
-                bundle.putString("Syllabuslink","link5");
-                i = new Intent(BooksHomeActivity.this,BooksMain.class);
-                i.putExtras(bundle);
-                startActivity(i);
+                if(bundle.getString("SubjectSix").equals("Uhv")) {
+                    bundle.putString("subjectname","Uhv");
+                    bundle.putString("Syllabuslink","link5");
+                    i = new Intent(BooksHomeActivity.this,BooksMain.class);
+                    i.putExtras(bundle);
+                    startActivity(i);
+                }else{
+                    Toast.makeText(this, "This Optional is optional for 2nd years", Toast.LENGTH_SHORT).show();
+                }
                 break;
         }
     }

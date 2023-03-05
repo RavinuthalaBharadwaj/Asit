@@ -5,6 +5,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.media.RingtoneManager;
 import android.widget.RemoteViews;
 
 import androidx.core.app.NotificationCompat;
@@ -55,6 +56,7 @@ public class NotificationReceiver extends FirebaseMessagingService {
                 .setVibrate(new long[]{1000, 1000, 1000,
                         1000, 1000})
                 .setOnlyAlertOnce(true)
+                .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
                 .setContentIntent(pendingIntent);
         builder = builder.setContent(
                 getCustomDesign(title,Message));

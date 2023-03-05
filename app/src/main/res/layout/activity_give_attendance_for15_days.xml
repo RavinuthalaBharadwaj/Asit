@@ -33,7 +33,7 @@
             android:layout_marginTop="20dp"
             android:layout_gravity="center"
             android:textSize="17sp"
-            android:fontFamily="@font/hel_bold"/>
+            android:fontFamily="@font/montbold"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -41,7 +41,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="30dp"
             android:textSize="17sp"
-            android:fontFamily="@font/hel_bold"/>
+            android:fontFamily="@font/montbold"/>
 
         <EditText
             android:id="@+id/etHeld"
@@ -61,7 +61,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:textSize="17sp"
-            android:fontFamily="@font/hel_bold"/>
+            android:fontFamily="@font/montbold"/>
 
         <EditText
             android:id="@+id/etAttended"
@@ -82,7 +82,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:textSize="17sp"
-            android:fontFamily="@font/hel_bold"/>
+            android:fontFamily="@font/montbold"/>
 
         <EditText
             android:id="@+id/etPercentage"
@@ -112,7 +112,7 @@
                 android:layout_gravity="center"
                 android:textColor="@color/Homefragback"
                 android:textSize="18sp"
-                android:fontFamily="@font/hel_bold_round"/>
+                android:fontFamily="@font/montbold"/>
         </androidx.cardview.widget.CardView>
 
 

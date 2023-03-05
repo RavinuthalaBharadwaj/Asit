@@ -1,16 +1,23 @@
 package com.Audisankara.asit;
 
+import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
+
+import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
+import androidx.fragment.app.Fragment;
+
+import com.Audisankara.asit.objects.BottomSheets;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -59,15 +66,151 @@ public class PreviousPapersFarg extends Fragment {
         }
     }
 
+    private CardView cvMidOne,cvMidTwo;
+    private FirebaseDatabase firebaseDatabase;
+    private DatabaseReference databaseReference;
+    private ArrayList<String> LinkList ;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_previous_papers_farg, container, false);
-        RelativeLayout layout = view.findViewById(R.id.lyt_previos_papers);
-        Animation animation = AnimationUtils.makeOutAnimation(view.getContext(),true);
-        animation.setDuration(600);
-        layout.startAnimation(animation);
+        cvMidOne =  view.findViewById(R.id.cvMidone);
+        cvMidTwo =  view.findViewById(R.id.cvMidTwo);
+        firebaseDatabase = FirebaseDatabase.getInstance("https://audisankara-institute-default-rtdb.asia-southeast1.firebasedatabase.app/");
+        databaseReference = firebaseDatabase.getReference().child("SemesterFive");
+        LinkList = new ArrayList<>();
+        switch (getArguments().getString("AssignLink")) {
+            case "CyberSec": {
+                databaseReference.child("CyberSecurity")
+                        .addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                for (DataSnapshot ds : snapshot.getChildren()) {
+                                    LinkList.add(String.valueOf(ds.getValue()));
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });
+                break;
+            }
+                case "Flat" : {
+                    databaseReference.child("Flat")
+                            .addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                    for(DataSnapshot ds : snapshot.getChildren()) {
+                                        LinkList.add(String.valueOf(ds.getValue()));
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError error) {
+
+                                }
+                            });
+                    break;
+                }
+                case "ControlSystems" : {
+                    databaseReference.child("ControlSystems")
+                            .addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                    for (DataSnapshot ds : snapshot.getChildren()) {
+                                        LinkList.add(String.valueOf(ds.getValue()));
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError error) {
+
+                                }
+                            });
+                    break;
+                }
+                case "DataMining" : {
+                    databaseReference.child("DataMining")
+                            .addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                    for(DataSnapshot ds : snapshot.getChildren()) {
+                                        LinkList.add(String.valueOf(ds.getValue()));
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError error) {
+
+                                }
+                            });
+                    break;
+                }
+
+                case "ComputerNetworks" : {
+                    databaseReference.child("ComputerNetworks")
+                            .addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                    for(DataSnapshot ds : snapshot.getChildren()) {
+                                        LinkList.add(String.valueOf(ds.getValue()));
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError error) {
+
+                                }
+                            });
+                    break;
+                }
+                case "Uhv" : {
+                    databaseReference.child("Uhv")
+                            .addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                    for (DataSnapshot ds : snapshot.getChildren()) {
+                                        LinkList.add(String.valueOf(ds.getValue()));
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError error) {
+
+                                }
+                            });
+                    break;
+            }
+            }
+        cvMidOne.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(requireActivity(),PdfViewActivity.class);
+                if(LinkList.get(11).equals("null")) {
+                    BottomSheets.INSTANCE.notAvailableBottomSheet(requireContext());
+                }else{
+                    i.putExtra("PdfName",LinkList.get(11));
+                    startActivity(i);
+                    //startActivity(PdfViewerActivity.Companion.launchPdfFromUrl(requireContext(),LinkList.get(1),"Assign Two","dir",false));
+                }
+            }
+        });
+        cvMidTwo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(requireActivity(),PdfViewActivity.class);
+                if(LinkList.get(12).equals("null")) {
+                    BottomSheets.INSTANCE.notAvailableBottomSheet(requireContext());
+                }else{
+                    i.putExtra("PdfName",LinkList.get(11));
+                    startActivity(i);
+                    //startActivity(PdfViewerActivity.Companion.launchPdfFromUrl(requireContext(),LinkList.get(1),"Assign Two","dir",false));
+                }
+            }
+        });
        return  view;
     }
 }

@@ -10,36 +10,38 @@
         app:cnb_textColor="@color/white"
         app:cnb_iconColor="@color/homefragfont"
         app:cnb_backgroundColor="#6FF6F5F5"
-        android:icon="@drawable/menu_home"/>
+        android:icon="@drawable/home_interface"/>
     <item
         android:id="@+id/Search"
         android:title="Search"
-        app:cnb_iconColor="@color/CustomPurple"
-        app:cnb_backgroundColor="#956A5EEA"
+        app:cnb_iconColor="@color/CustomRed"
+        app:cnb_backgroundColor="#94E85859"
         app:cnb_textColor="@color/white"
-        android:icon="@drawable/search_menu"/>
+        android:icon="@drawable/search_interface"/>
 
     <item
         android:id="@+id/Recnt"
-        android:title="Recent"
-        app:cnb_backgroundColor="#94E85859"
-        app:cnb_iconColor="@color/CustomRed"
+        android:title="Updates"
+        app:cnb_backgroundColor="#956A5EEA"
+        app:cnb_iconColor="@color/CustomPurple"
         app:cnb_textColor="@color/white"
-        android:icon="@drawable/heart" />
+        android:icon="@drawable/activitty_interface" />
     <item
         android:id="@+id/OverView"
-        android:title="Youtube"
+        android:title="Plays"
         app:cnb_iconColor="@color/CustomRed"
         app:cnb_backgroundColor="#94E85859"
         app:cnb_iconTintMode="src_in"
         app:cnb_textColor="@color/white"
-        android:icon="@drawable/play_menu"/>
+        android:icon="@drawable/play_interface"/>
     <item
         android:id="@+id/Profile"
         android:title="Profile"
         app:cnb_textColor="@color/white"
         app:cnb_iconTintMode="src_in"
         app:cnb_iconColor="@color/Homefragback"
-        app:cnb_backgroundColor="#AD51F588"
-        android:icon="@drawable/profile"/>
+        app:cnb_backgroundColor="#006A77"
+        android:icon="@drawable/user_interface"/>
 </menu>
+
+    <!-- 94E85859 -->

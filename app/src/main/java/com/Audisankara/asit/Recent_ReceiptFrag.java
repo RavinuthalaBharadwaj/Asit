@@ -1,26 +1,20 @@
 package com.Audisankara.asit;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
-import com.Audisankara.asit.Adaptors.ReceiptAdaptor;
 import com.Audisankara.asit.Models.ReceiptModel;
 import com.Audisankara.asit.helper.Constant;
 import com.Audisankara.asit.helper.Session;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 /**
@@ -73,7 +67,6 @@ public class Recent_ReceiptFrag extends Fragment {
     Session session ;
     private RecyclerView recyclerView;
     public static ArrayList<ReceiptModel> ReceiptModelArrayList;
-    public ReceiptAdaptor adaptor;
     private LinearLayoutManager linearLayoutManager;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -87,8 +80,6 @@ public class Recent_ReceiptFrag extends Fragment {
         linearLayoutManager = new LinearLayoutManager(view.getContext());
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(linearLayoutManager);
-        adaptor = new ReceiptAdaptor(ReceiptModelArrayList);
-        recyclerView.setAdapter(adaptor);
         return  view;
     }
 

@@ -7,8 +7,6 @@ import android.content.SharedPreferences;
 
 import com.Audisankara.asit.WelcomeActivity;
 
-import java.util.Set;
-
 
 public class Session {
     public static final String PREFER_NAME = "Asit";
@@ -62,7 +60,6 @@ public class Session {
         editor.clear();
         editor.commit();
         new Session(_activity).setBoolean("is_logged_in", false);
-
     }
     public boolean getBoolean(String id) {
         return pref.getBoolean(id, false);

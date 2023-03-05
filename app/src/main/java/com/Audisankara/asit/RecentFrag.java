@@ -1,16 +1,9 @@
 package com.Audisankara.asit;
 
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-
-import android.os.Handler;
+import android.transition.AutoTransition;
+import android.transition.TransitionManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +13,13 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.Audisankara.asit.Adaptors.NotificationAdaptor;
 import com.Audisankara.asit.Adaptors.TechTalkRecycler;
@@ -33,8 +33,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.klinker.android.link_builder.Link;
-import com.klinker.android.link_builder.LinkBuilder;
 
 import java.util.ArrayList;
 
@@ -87,12 +85,12 @@ public class RecentFrag extends Fragment {
 
     Session session;
     private SwipeRefreshLayout swipeRefreshLayout;
-    private LottieAnimationView lottieAnimationView;
     private RecyclerView NotificationRecycler,TechTalkRecycler,ReceiptRecycler;
 
     private com.Audisankara.asit.Adaptors.TechTalkRecycler techTalkRecyclerAdaptor;
     private NotificationAdaptor notificationAdaptor;
 
+    private LottieAnimationView techtalklottie;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
 
@@ -124,45 +122,44 @@ public class RecentFrag extends Fragment {
         TechTalkRecycler = view.findViewById(R.id.TechTalkRecycler);
 
         firebaseDatabase = FirebaseDatabase.getInstance("https://audisankara-institute-default-rtdb.asia-southeast1.firebasedatabase.app/");
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("UPDATES");
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("Updates");
 
         GetUpdates();
 
+        LinearLayout lyt= view.findViewById(R.id.InvisibleLyt);
+        CardView cv = view.findViewById(R.id.cvExpand);
+        lyt.setVisibility(View.VISIBLE);
+        TransitionManager.beginDelayedTransition(cv,new AutoTransition().setDuration(1000).addTarget(cv));
+
+        techtalklottie = view.findViewById(R.id.lottietech);
         tv = view.findViewById(R.id.tv);
-        Link link = new Link("click here")
-                .setTextColor(Color.parseColor("#259B24"))                  // optional, defaults to holo blue
-                .setTextColorOfHighlightedLink(Color.parseColor("#0D3D0C")) // optional, defaults to holo blue
-                .setHighlightAlpha(.4f)                                     // optional, defaults to .15f
-                .setUnderlined(false)                                       // optional, defaults to true
-                .setBold(true);
-        LinkBuilder.on(tv).addLink(link).build();
 
         Animation animation = AnimationUtils.makeInAnimation(view.getContext(),true);
         animation.setDuration(500);
+
         LinearLayout layout = view.findViewById(R.id.lyrecent);
         layout.startAnimation(animation);
-
-        swipeRefreshLayout.setRefreshing(true);
-        new Handler().postDelayed(new Runnable() {
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
-            public void run() {
-                //GetUpdates();
+            public void onRefresh() {
+                UpdateRecycler();
                 swipeRefreshLayout.setRefreshing(false);
             }
-        },2000);
+        });
         return  view;
     }
 
     private void GetUpdates() {
         Updates = new ArrayList<>();
+        notificationModelArrayList = new ArrayList<>();
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot ds : snapshot.getChildren()) {
-                    Updates.add(String.valueOf(ds.getValue()));
+                    notificationModelArrayList.add(ds.getValue(NotificationModel.class));
                 }
                 UpdateRecycler();
-                System.out.println(Updates.get(0));
+                System.out.println("test"+notificationModelArrayList.get(0));
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
@@ -172,12 +169,11 @@ public class RecentFrag extends Fragment {
     }
 
     private void UpdateRecycler() {
-        notificationModelArrayList = new ArrayList<>();
-        for(int i =0 ;i< Updates.size();i++) {
-            notificationModelArrayList.add(new NotificationModel(Updates.get(i)));
-        }
         notificationAdaptor = new NotificationAdaptor(notificationModelArrayList,null);
-        NotificationRecycler.setLayoutManager(new LinearLayoutManager(requireContext()));
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(requireContext());
+        linearLayoutManager.setReverseLayout(true);
+        linearLayoutManager.setStackFromEnd(true);
+        NotificationRecycler.setLayoutManager(linearLayoutManager);
         NotificationRecycler.setAdapter(notificationAdaptor);
         NotificationRecycler.setHasFixedSize(true);
         GetTechTalks();
@@ -191,7 +187,6 @@ public class RecentFrag extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot ds : snapshot.getChildren()) {
                     TechTalks.add(String.valueOf(ds.getValue()));
-                   // techTalkRecentModelArrayList.add(String.valueOf(ds.getValue()));
                 }
                 UpdateTechTalkRecycler();
             }
@@ -206,6 +201,14 @@ public class RecentFrag extends Fragment {
         techTalkRecentModelArrayList = new ArrayList<>();
         for(int i = 0 ;i<TechTalks.size();i++) {
             techTalkRecentModelArrayList.add(new TechTalkRecentModel(TechTalks.get(i)));
+
+        }
+        if(!techTalkRecentModelArrayList.isEmpty()) {
+            TechTalkRecycler.setVisibility(View.VISIBLE);
+            techtalklottie.setVisibility(View.GONE);
+        }else{
+            techtalklottie.setVisibility(View.VISIBLE);
+            TechTalkRecycler.setVisibility(View.GONE);
         }
         techTalkRecyclerAdaptor = new TechTalkRecycler(techTalkRecentModelArrayList,requireActivity());
         TechTalkRecycler.setLayoutManager(new LinearLayoutManager(requireContext()));

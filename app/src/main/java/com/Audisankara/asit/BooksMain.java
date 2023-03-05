@@ -1,53 +1,44 @@
 package com.Audisankara.asit;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.viewpager.widget.ViewPager;
-
-import android.annotation.SuppressLint;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
+import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+import androidx.fragment.app.FragmentManager;
+import androidx.viewpager2.widget.ViewPager2;
 
 import com.Audisankara.asit.Adaptors.ViewPagerAdaptor;
-import com.google.android.material.tabs.TabLayout;
-import com.ismaeldivita.chipnavigation.ChipNavigationBar;
+import com.tbuonomo.viewpagerdotsindicator.DotsIndicator;
 
 public class BooksMain extends AppCompatActivity {
 
     public ViewPagerAdaptor viewPagerAdaptor;
-    public TabLayout tabLayout;
-    public ViewPager viewPager;
+    public ViewPager2 viewPager2;
+    private CardView cvExpand;
     public static FragmentManager fm;
+    protected LinearLayout invisiblelyt;
     private TextView tvSubjectName;
+    private DotsIndicator dotsIndicator;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_books_main);
 
-        viewPager = findViewById(R.id.viewpager);
-        tabLayout = findViewById(R.id.tablyt);
+        viewPager2 = findViewById(R.id.viewpager);
         fm = getSupportFragmentManager();
         Bundle bundle = getIntent().getExtras();
-        getWindow().setFlags(
-                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
-                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
-        );
-        tabLayout.setupWithViewPager(viewPager);
+        cvExpand = findViewById(R.id.cvExpand);
+        dotsIndicator = findViewById(R.id.dotIndicator);
         String SubjectName = bundle.getString("subjectname");
-        viewPagerAdaptor = new ViewPagerAdaptor(getSupportFragmentManager(),SubjectName,tabLayout,this);
-        Toast.makeText(this, SubjectName, Toast.LENGTH_SHORT).show();
-        TextView tv = (TextView) LayoutInflater.from(this).inflate(R.layout.custom_tab_font,null);
-        for(int i=0;i<tabLayout.getTabCount();i++) {
-            tabLayout.getTabAt(i).setCustomView(tv);
-        }
-        viewPager.setAdapter(viewPagerAdaptor);
+        invisiblelyt = findViewById(R.id.InvisibleLyt);
+        viewPagerAdaptor = new ViewPagerAdaptor(getSupportFragmentManager(),getLifecycle(),SubjectName,cvExpand,invisiblelyt);
+        viewPager2.setAdapter(viewPagerAdaptor);
+        viewPager2.beginFakeDrag();
         tvSubjectName = findViewById(R.id.tvSubjectName);
         tvSubjectName.setText(SubjectName);
+        dotsIndicator.attachTo(viewPager2);
+
     }
 }

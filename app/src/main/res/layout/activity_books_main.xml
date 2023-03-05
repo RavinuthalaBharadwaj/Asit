@@ -8,21 +8,12 @@
     android:background="@color/Homefragback"
     tools:context=".BooksMain">
 
-
-    <com.airbnb.lottie.LottieAnimationView
-        android:layout_width="match_parent"
-        android:layout_height="600dp"
-        android:scaleType="centerCrop"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"
-        app:lottie_rawRes="@raw/mesh2_lottie" />
-
     <LinearLayout
         android:id="@+id/one"
         android:layout_width="match_parent"
-        android:layout_height="130dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginBottom="20dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
         android:orientation="vertical">
 
         <TextView
@@ -40,13 +31,57 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:fontFamily="@font/montsemibold"
             android:text="Get the syllabus,Assignments,Materilas \nand many more .."
             android:textColor="#DCF6F5F5"
             android:textSize="15sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                app:cardBackgroundColor="@color/homefragfont"
+                app:cardCornerRadius="20dp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvExpand"
+                android:layout_width="wrap_content"
+                android:layout_height="8dp"
+                android:layout_marginStart="10dp"
+                app:cardBackgroundColor="@color/homefragfont"
+                app:cardCornerRadius="20dp">
+
+                <LinearLayout
+                    android:id="@+id/InvisibleLyt"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:visibility="gone"></LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
     </LinearLayout>
 
+    <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+        android:id="@+id/dotIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/one"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="0dp"
+        app:dotsColor="@color/CustomBlack"
+        app:dotsSize="8dp"
+        app:dotsSpacing="4dp"
+        app:selectedDotColor="@color/homefragfont" />
+
+    <!--
     <View
         android:id="@+id/view"
         android:layout_width="match_parent"
@@ -77,15 +112,16 @@
         app:tabIndicatorHeight="4dp"
         app:tabMode="fixed"
         app:tabSelectedTextColor="@color/homefragfont"
-        app:tabTextColor="#C8F6F5F5">
-    </com.google.android.material.tabs.TabLayout>
+        app:tabTextColor="#C8F6F5F5"></com.google.android.material.tabs.TabLayout>
+
+        -->
 
 
-    <androidx.viewpager.widget.ViewPager
+    <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/tablyt">
-    </androidx.viewpager.widget.ViewPager>
+        android:orientation="horizontal"
+        android:layout_below="@id/dotIndicator"></androidx.viewpager2.widget.ViewPager2>
 
 </RelativeLayout>

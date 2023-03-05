@@ -27,7 +27,7 @@
         android:layout_below="@id/tvRollNumber"
         android:layout_marginStart="30dp"
         android:layout_marginTop="100dp"
-        android:fontFamily="@font/workbold"
+        android:fontFamily="@font/montbold"
         android:text="Present"
         android:textColor="@color/homefragfont"
         android:textSize="17sp" />
@@ -40,7 +40,7 @@
         android:layout_marginHorizontal="30dp"
         android:layout_marginTop="5dp"
         android:background="@drawable/etbackfdefault"
-        android:fontFamily="@font/workmedium"
+        android:fontFamily="@font/montbold"
         android:padding="15dp"
         android:textColor="@color/homefragfont"
         android:textSize="16sp"></EditText>
@@ -52,7 +52,7 @@
         android:layout_below="@id/etPresent"
         android:layout_marginStart="30dp"
         android:layout_marginTop="10dp"
-        android:fontFamily="@font/workbold"
+        android:fontFamily="@font/montsemibold"
         android:text="Absent"
         android:textColor="@color/homefragfont"
         android:textSize="17sp" />
@@ -66,7 +66,7 @@
         android:layout_marginHorizontal="30dp"
         android:layout_marginTop="5dp"
         android:background="@drawable/etbackfdefault"
-        android:fontFamily="@font/workmedium"
+        android:fontFamily="@font/montbold"
         android:padding="15dp"
         android:textColor="@color/homefragfont"
         android:textSize="16sp"></EditText>

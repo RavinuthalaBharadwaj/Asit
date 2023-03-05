@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:scrollbars="none"
-    android:background="@color/CustomBlack"
+    android:background="@color/homefragfont"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".DevloperFrag">
@@ -14,9 +14,11 @@
         android:layout_height="wrap_content"
         android:scrollbars="none">
 
-        <LinearLayout
+
+       <!-- <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             android:orientation="vertical">
 
             <RelativeLayout
@@ -44,9 +46,9 @@
         <com.airbnb.lottie.LottieAnimationView
             android:layout_width="250dp"
             android:layout_height="250dp"
+            android:layout_centerInParent="true"
             app:lottie_autoPlay="true"
             app:lottie_loop="true"
-            android:layout_centerInParent="true"
             app:lottie_rawRes="@raw/devpage" />
 
         <androidx.cardview.widget.CardView
@@ -164,6 +166,375 @@
                 android:layout_marginBottom="80dp"
                 android:fontFamily="@font/montsemibold"
                 android:textColor="@color/white"/>
+        </LinearLayout>
+        -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lyt"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/p_logo"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Ravinuthala Bharadwaj"
+                android:fontFamily="@font/poppinsmedium"
+                android:textSize="22sp"
+                android:textColor="@color/Homefragback"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="I use my Design to Satisfy my soul, \nAs well as my clients ."
+                android:fontFamily="@font/poppinsmedium"
+                android:textSize="15sp"
+                android:textColor="@color/Homefragback"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="UI Designer / Android developer"
+                android:fontFamily="@font/poppinslight"
+                android:layout_marginTop="10dp"
+                android:textSize="16sp"
+                android:textColor="@color/Homefragback"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="at GreyMatter.inc"
+                android:fontFamily="@font/poppinslight"
+                android:layout_marginTop="1dp"
+                android:textSize="16sp"
+                android:textColor="@color/Homefragback"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginTop="20dp"
+                android:alpha="0.4"
+                android:background="@drawable/line"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="5dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="7"
+                android:layout_marginHorizontal="20dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_weight="1">
+                    <ImageView
+                        android:id="@+id/imggithub"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/github"
+                        android:layout_gravity="center"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_weight="1">
+                    <ImageView
+                        android:id="@+id/imginstagram"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/insta"
+                        android:layout_gravity="center"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_weight="1">
+                    <ImageView
+                        android:id="@+id/imgWhatsapp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/whatsapp"
+                        android:layout_gravity="center"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Hey there, down here 👋 Want to\nhear something cool? "
+                android:fontFamily="@font/poppinslight"
+                android:layout_marginTop="10dp"
+                android:textSize="16sp"
+                android:textColor="@color/Homefragback"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="If you don't have a good solution\nYou dont have a good problem "
+                android:fontFamily="@font/poppinslightitalic"
+                android:layout_marginTop="10dp"
+                android:textSize="14sp"
+                android:textColor="@color/Homefragback"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginTop="25dp"
+                android:alpha="0.4"
+                android:background="@drawable/line"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Achievements"
+                android:textColor="@color/Homefragback"
+                android:fontFamily="@font/poppinsmedium"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginTop="15dp"
+                android:layout_gravity="center"
+                android:gravity="start|center"
+                android:textSize="15sp"/>
+
+            <ImageView
+                android:id="@+id/certificate1"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:src="@drawable/cer1"
+                android:scaleType="centerCrop"
+                android:layout_marginHorizontal="40dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Skills"
+                android:textColor="@color/Homefragback"
+                android:fontFamily="@font/poppinsmedium"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginTop="15dp"
+                android:layout_gravity="center"
+                android:gravity="start|center"
+                android:textSize="15sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:weightSum="7"
+                android:layout_marginHorizontal="30dp">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_weight="1">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/icons8_android_studio_48px"
+                        android:layout_gravity="center"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_weight="1">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/icons8_java_48px"
+                        android:layout_gravity="center"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_weight="1">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/icons8_source_code_48px"
+                        android:layout_gravity="center"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_weight="1">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/icons8_kotlin_48px"
+                        android:layout_gravity="center"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_weight="1">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/icons8_fire_48px"
+                        android:layout_gravity="center"/>
+                </LinearLayout>
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Experience"
+                android:textColor="@color/Homefragback"
+                android:fontFamily="@font/poppinsmedium"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginTop="15dp"
+                android:layout_gravity="center"
+                android:gravity="start|center"
+                android:textSize="15sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="70dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        app:cardCornerRadius="10dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginBottom="10dp"
+                        app:cardBackgroundColor="@color/CustomRed"/>
+                    <ImageView
+                        android:layout_width="2dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/line"
+                        android:layout_gravity="center"/>
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        app:cardCornerRadius="10dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:cardBackgroundColor="@color/Homefragback"/>
+                    <ImageView
+                        android:layout_width="2dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/line"
+                        android:layout_gravity="center"/>
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        app:cardCornerRadius="10dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:cardBackgroundColor="@color/Homefragback"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="UI designer\nat Greymatter inc\nNov 2022 - Present"
+                        android:textColor="@color/Homefragback"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="15dp"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/poppinsmedium"/>
+                    <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Android Developer\nat Greymatter inc\nJuly 2022 - Oct 2022"
+                    android:textColor="@color/Homefragback"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="28dp"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/poppinsmedium"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Journey Started\nat Greymatter inc\nJan 2022 - Present"
+                        android:textColor="@color/Homefragback"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="28dp"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/poppinsmedium"/>
+                </LinearLayout>
+        </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textSize="15sp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppinslightitalic"
+                android:textColor="@color/Homefragback"
+                android:text="Intrested in what you see?"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textSize="15sp"
+                android:fontFamily="@font/poppinslightitalic"
+                android:textColor="@color/Homefragback"
+                android:layout_marginTop="00dp"
+                android:layout_marginBottom="30dp"
+                android:text="Shoot me an email at \n@bharadwajbharath890@gmail.com"/>
+
+            <ImageView
+                android:id="@+id/email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </ImageView>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

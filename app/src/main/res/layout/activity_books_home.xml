@@ -5,6 +5,7 @@
     android:id="@+id/lyt"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/Homefragback"
     tools:context=".BooksHomeActivity">
 
     <ScrollView
@@ -24,7 +25,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:fontFamily="@font/workbold"
+                android:fontFamily="@font/montbold"
                 android:gravity="center"
                 android:text="Pick your Subject"
                 android:textColor="@color/homefragfont"
@@ -40,22 +41,23 @@
                     android:id="@+id/cvSubjectSix"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    app:cardBackgroundColor="@color/CustomBlack"
                     app:cardCornerRadius="10dp">
 
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/mesh13" />
+                        android:scaleType="centerCrop" />
 
                     <TextView
+                        android:id="@+id/SubjectSix"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:fontFamily="@font/hel_bold_round"
+                        android:fontFamily="@font/montbold"
                         android:gravity="center"
                         android:text="Universal Human\nValues"
-                        android:textColor="@color/Homefragback"
+                        android:textColor="@color/homefragfont"
                         android:textSize="18sp" />
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
@@ -64,16 +66,16 @@
                 android:id="@+id/grid"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginHorizontal="30dp"
                 android:orientation="horizontal"
                 android:weightSum="2">
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="400dp"
-                    android:layout_gravity="center"
+                    android:layout_gravity="end"
                     android:layout_weight="1"
-                    android:gravity="center"
+                    android:gravity="end"
+                    android:layout_marginEnd="7dp"
                     android:orientation="vertical"
                     android:weightSum="2">
 
@@ -83,25 +85,19 @@
                         android:layout_height="0dp"
                         android:layout_marginVertical="10dp"
                         android:layout_weight="0.85"
-                        app:cardBackgroundColor="@color/Homefragnotifybar"
+                        app:cardBackgroundColor="@color/CustomBlack"
                         app:cardCornerRadius="10dp">
 
-                        <ImageView
-                            android:id="@+id/SmallCardOne"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/mesh9" />
 
                         <TextView
                             android:id="@+id/SubjectOne"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:fontFamily="@font/hel_bold_round"
+                            android:fontFamily="@font/montbold"
                             android:gravity="center"
                             android:text="Cyber \nSecurity"
-                            android:textColor="@color/Homefragback"
+                            android:textColor="@color/homefragfont"
                             android:textSize="18sp" />
                     </androidx.cardview.widget.CardView>
 
@@ -117,18 +113,17 @@
                             android:id="@+id/LongCardTwo"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/meshten" />
+                            android:scaleType="centerCrop" />
 
                         <TextView
                             android:id="@+id/SubjectThree"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:fontFamily="@font/hel_bold_round"
+                            android:fontFamily="@font/montbold"
                             android:gravity="center"
                             android:text="Control\nSystems"
-                            android:textColor="@color/Homefragback"
+                            android:textColor="@color/homefragfont"
                             android:textSize="18sp" />
                     </androidx.cardview.widget.CardView>
                 </LinearLayout>
@@ -137,7 +132,8 @@
                     android:layout_width="0dp"
                     android:layout_height="400dp"
                     android:layout_weight="1"
-                    android:gravity="center"
+                    android:gravity="start"
+                    android:layout_marginStart="7dp"
                     android:orientation="vertical"
                     android:weightSum="2">
 
@@ -148,7 +144,7 @@
                         android:layout_marginVertical="10dp"
                         app:cardPreventCornerOverlap="true"
                         android:layout_weight="1.1"
-                        app:cardBackgroundColor="@color/CustomRed"
+                        app:cardBackgroundColor="@color/CustomBlack"
                         app:cardCornerRadius="10dp">
 
 
@@ -156,17 +152,16 @@
                             android:id="@+id/LongCardOne"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/mesh13" />
+                            android:scaleType="centerCrop" />
 
                         <TextView
                             android:id="@+id/SubjectTwo"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:fontFamily="@font/hel_bold_round"
+                            android:fontFamily="@font/montbold"
                             android:text="FLAT"
-                            android:textColor="@color/Homefragback"
+                            android:textColor="@color/homefragfont"
                             android:textSize="18sp" />
                     </androidx.cardview.widget.CardView>
 
@@ -175,25 +170,24 @@
                         android:layout_width="150dp"
                         android:layout_height="0dp"
                         android:layout_weight="0.85"
-                        app:cardBackgroundColor="@color/homefragfont"
+                        app:cardBackgroundColor="@color/CustomBlack"
                         app:cardCornerRadius="10dp">
 
                         <ImageView
                             android:id="@+id/SmallCardTwo"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/mesh12" />
+                            android:scaleType="centerCrop" />
 
                         <TextView
                             android:id="@+id/SubjectFour"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:fontFamily="@font/hel_bold_round"
+                            android:fontFamily="@font/montbold"
                             android:gravity="center"
                             android:text="Data\nMining"
-                            android:textColor="@color/Homefragback"
+                            android:textColor="@color/homefragfont"
                             android:textSize="18sp" />
                     </androidx.cardview.widget.CardView>
                 </LinearLayout>
@@ -210,23 +204,23 @@
                     android:id="@+id/cvSubjectFive"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    app:cardBackgroundColor="@color/CustomBlack"
                     app:cardCornerRadius="10dp">
 
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/mesh12" />
+                        android:scaleType="centerCrop" />
 
                     <TextView
                         android:id="@+id/SubjectFive"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:fontFamily="@font/hel_bold_round"
+                        android:fontFamily="@font/montbold"
                         android:gravity="center"
                         android:text="Computer Networks"
-                        android:textColor="@color/Homefragback"
+                        android:textColor="@color/homefragfont"
                         android:textSize="18sp" />
                 </androidx.cardview.widget.CardView>
             </LinearLayout>

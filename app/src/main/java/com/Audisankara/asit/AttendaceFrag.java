@@ -1,48 +1,28 @@
 package com.Audisankara.asit;
 
 import android.app.Dialog;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-
 import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
-import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.Audisankara.asit.helper.Constant;
 import com.Audisankara.asit.helper.Session;
-import com.ghanshyam.graphlibs.Graph;
-import com.ghanshyam.graphlibs.GraphData;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.owl93.dpb.CircularProgressView;
-import com.owl93.dpb.DeterminateProgressViewListener;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
 
 
 /**
@@ -118,7 +98,6 @@ public class AttendaceFrag extends Fragment {
         pbAttended = view.findViewById(R.id.pbAttended);
         pbSkipped = view.findViewById(R.id.pbSkipped);
         dialog = new Dialog(requireActivity());
-        dialog.setContentView(R.layout.attendance_dilaogue);
         dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         dialog.setCancelable(false);
         swipeRefreshLayout = view.findViewById(R.id.refreshlyt);

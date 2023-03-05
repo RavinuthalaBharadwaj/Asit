@@ -1,24 +1,18 @@
 package com.Audisankara.asit;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.RelativeLayout;
 
-import com.airbnb.lottie.LottieAnimationView;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 public class SignInActivity extends AppCompatActivity{
 
-    private LottieAnimationView lottieAnimationView;
-    private CardView cvSignIn;
-    private RelativeLayout lytSignUp;
+    private CardView cvSignIn,cvSignUp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,10 +23,10 @@ public class SignInActivity extends AppCompatActivity{
             Window window = this.getWindow();
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            window.setStatusBarColor(this.getResources().getColor(R.color.CustomFontColor));
+            window.setStatusBarColor(this.getResources().getColor(R.color.Homefragback));
         }
         cvSignIn = findViewById(R.id.cvSignin);
-        lytSignUp = findViewById(R.id.LytSignup);
+        cvSignUp = findViewById(R.id.cvSignup);
 
         cvSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,7 +34,7 @@ public class SignInActivity extends AppCompatActivity{
                 startActivity(new Intent(SignInActivity.this,SignInUserActivity.class));
             }
         });
-        lytSignUp.setOnClickListener(new View.OnClickListener() {
+        cvSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(SignInActivity.this,SignUpActivity.class));

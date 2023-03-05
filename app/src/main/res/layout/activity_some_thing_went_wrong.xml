@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:background="@color/Homefragback"
+    tools:context=".SomeThingWentWrongActivity">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/errorlottie"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginBottom="60dp"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"/>
+
+    <TextView
+        android:id="@+id/errortext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:layout_marginHorizontal="25dp"
+        android:textColor="@color/homefragfont"
+        android:textSize="20sp"
+        android:fontFamily="@font/montbold"
+        android:text="If its not you, its us .\nwe Fixing some things here \nCome Back Later "/>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/btnUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Update Now"
+        android:visibility="visible"
+        android:textColor="@color/Homefragback"
+        android:textSize="14sp"
+        app:cardBackgroundColor="@color/CustomRed"
+        app:cardCornerRadius="15dp"
+        android:fontFamily="@font/montbold"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="40dp">
+
+
+        <TextView
+            android:id="@+id/tvbtntext"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Update Now"
+            android:gravity="center"
+            android:textSize="17sp"
+            android:fontFamily="@font/montbold"
+            android:textColor="@color/Homefragback"/>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

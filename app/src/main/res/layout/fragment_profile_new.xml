@@ -1,0 +1,650 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/lytprofile"
+    android:background="@color/Homefragback"
+    tools:context=".ProfileFrag">
+
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/ProfileRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:layout_marginHorizontal="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Profile"
+                    android:fontFamily="@font/montbold"
+                    android:textColor="@color/homefragfont"
+                    android:textSize="30sp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="30dp"/>
+
+                <LinearLayout
+                    android:id="@+id/lyt2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/firstlyt"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        app:cardBackgroundColor="@color/CustomPurple"
+                        app:cardCornerRadius="20dp" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvExpand"
+                        android:layout_width="wrap_content"
+                        android:layout_height="8dp"
+                        android:layout_marginStart="10dp"
+                        app:cardBackgroundColor="@color/homefragfont"
+                        app:cardCornerRadius="20dp">
+
+                        <LinearLayout
+                            android:id="@+id/InvisibleLyt"
+                            android:layout_width="80dp"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:visibility="visible"/>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="10dp">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv1"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="start"
+                        android:layout_alignParentStart="true"
+                        app:cardCornerRadius="300dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/female_user_4"
+                            android:scaleType="centerCrop"/>
+                    </androidx.cardview.widget.CardView>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_toEndOf="@id/cv1"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="15dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:textColor="@color/homefragfont"
+                            android:fontFamily="@font/montblack"
+                            android:textSize="16sp"
+                            android:singleLine="true"
+                            android:text="Ravinuthala Bharadwaj"/>
+                        <TextView
+                            android:id="@+id/tvRollNumber"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:alpha="0.8"
+                            android:layout_marginTop="5dp"
+                            android:layout_gravity="start"
+                            android:textColor="@color/homefragfont"
+                            android:fontFamily="@font/montbold"
+                            android:textSize="16sp"
+                            android:singleLine="true"
+                            android:text="202H1A05B2"
+                            android:paddingHorizontal="00dp"/>
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="10dp"
+                        android:visibility="visible"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/ic_baseline_keyboard_arrow_right_24" />
+                </RelativeLayout>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="30dp"
+                    app:cardBackgroundColor="@color/CustomBlack"
+                    app:cardElevation="0dp"
+                    android:layout_marginBottom="20dp"
+
+                    android:layout_marginTop="10dp"
+                    app:cardCornerRadius="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:id="@+id/activityDot"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="25dp"
+                            app:lottie_autoPlay="true"
+                            app:lottie_loop="true"
+                            android:scaleType="centerCrop"
+                            app:lottie_rawRes="@raw/offline_dot"/>
+
+                        <TextView
+                            android:id="@+id/tvActiveText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Inactive"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/montbold"
+                            android:textColor="@color/homefragfont"
+                            android:textSize="18sp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="You are currently Active in the Appliaction this means your friends can see your online state"
+                            android:layout_marginHorizontal="30dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="30dp"
+                            android:gravity="center"
+                            android:alpha="0.5"
+                            android:fontFamily="@font/montbold"
+                            android:textColor="@color/homefragfont"
+                            android:textSize="14sp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Preferences"
+                    android:layout_marginHorizontal="30dp"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/montsemibold"
+                    android:alpha="0.7"
+                    android:textColor="@color/homefragfont"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="30dp"
+                    app:cardBackgroundColor="@color/CustomBlack"
+                    app:cardElevation="0dp"
+                    app:cardCornerRadius="10dp"
+                    android:layout_marginTop="15dp">
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/LytAccountSettings"
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp">
+
+                            <LinearLayout
+                                android:layout_width="70dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center">
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/user_interface"/>
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:padding="10dp"
+                                android:layout_gravity="center"
+                                android:gravity="center|start"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Account Settings"
+                                    android:textSize="16sp"
+                                    android:textColor="@color/homefragfont"
+                                    android:fontFamily="@font/montbold"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Profile,Username &amp; Password ."
+                                    android:textSize="13sp"
+                                    android:textColor="@color/homefragfont"
+                                    android:alpha="0.5"
+                                    android:layout_marginTop="5dp"
+                                    android:fontFamily="@font/montbold"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/LytActivityStatus"
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp">
+
+                            <LinearLayout
+                                android:layout_width="70dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center">
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/online_interface"/>
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:padding="10dp"
+                                android:layout_gravity="center"
+                                android:gravity="center|start"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Availability status"
+                                    android:textSize="16sp"
+                                    android:textColor="@color/homefragfont"
+                                    android:fontFamily="@font/montbold"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Set your self as Active/Inactive."
+                                    android:singleLine="true"
+                                    android:textSize="13sp"
+                                    android:textColor="@color/homefragfont"
+                                    android:alpha="0.5"
+                                    android:layout_marginTop="5dp"
+                                    android:fontFamily="@font/montbold"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="About Application"
+                    android:layout_marginHorizontal="30dp"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/montsemibold"
+                    android:layout_marginTop="15dp"
+                    android:alpha="0.7"
+                    android:textColor="@color/homefragfont"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="30dp"
+                    app:cardBackgroundColor="@color/CustomBlack"
+                    app:cardElevation="0dp"
+                    app:cardCornerRadius="10dp"
+                    android:layout_marginTop="15dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/LytChangeLog"
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            tools:ignore="DuplicateIds">
+
+                            <LinearLayout
+                                android:layout_width="70dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center">
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/activitty_interface"/>
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:padding="10dp"
+                                android:layout_gravity="center"
+                                android:gravity="center|start"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Change Logs"
+                                    android:textSize="16sp"
+                                    android:textColor="@color/homefragfont"
+                                    android:fontFamily="@font/montbold"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Previosly released versions ."
+                                    android:textSize="13sp"
+                                    android:textColor="@color/homefragfont"
+                                    android:alpha="0.5"
+                                    android:layout_marginTop="5dp"
+                                    android:fontFamily="@font/montbold"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/LytContactUs"
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp">
+
+                            <LinearLayout
+                                android:layout_width="70dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center">
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/contact_interface"/>
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:padding="10dp"
+                                android:layout_gravity="center"
+                                android:gravity="center|start"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Contact us"
+                                    android:textSize="16sp"
+                                    android:textColor="@color/homefragfont"
+                                    android:fontFamily="@font/montbold"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Facing any issues ?"
+                                    android:singleLine="true"
+                                    android:textSize="13sp"
+                                    android:textColor="@color/homefragfont"
+                                    android:alpha="0.5"
+                                    android:layout_marginTop="5dp"
+                                    android:fontFamily="@font/montbold"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/LytVersion"
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp">
+
+                            <LinearLayout
+                                android:layout_width="70dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center">
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/version_interface"/>
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:padding="10dp"
+                                android:layout_gravity="center"
+                                android:gravity="center|start"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Version"
+                                    android:textSize="16sp"
+                                    android:textColor="@color/homefragfont"
+                                    android:fontFamily="@font/montbold"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Asit-V0.0.7-Pheonix (Patch-3)"
+                                    android:singleLine="true"
+                                    android:textSize="13sp"
+                                    android:textColor="@color/homefragfont"
+                                    android:alpha="0.5"
+                                    android:layout_marginTop="5dp"
+                                    android:fontFamily="@font/montbold"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="About Us"
+                    android:layout_marginHorizontal="30dp"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/montsemibold"
+                    android:layout_marginTop="15dp"
+                    android:alpha="0.7"
+                    android:textColor="@color/homefragfont"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="30dp"
+                    app:cardBackgroundColor="@color/CustomBlack"
+                    app:cardElevation="0dp"
+                    app:cardCornerRadius="10dp"
+                    android:layout_marginTop="15dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/LytWebsite"
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp">
+
+                            <LinearLayout
+                                android:layout_width="70dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center">
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/website_interface"/>
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:padding="10dp"
+                                android:layout_gravity="center"
+                                android:gravity="center|start"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Webiste"
+                                    android:textSize="16sp"
+                                    android:textColor="@color/homefragfont"
+                                    android:fontFamily="@font/montbold"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Visit our site to know more ."
+                                    android:textSize="13sp"
+                                    android:textColor="@color/homefragfont"
+                                    android:alpha="0.5"
+                                    android:layout_marginTop="5dp"
+                                    android:fontFamily="@font/montbold"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/LytAboutDev"
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp">
+
+                            <LinearLayout
+                                android:layout_width="70dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center">
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/developer_interfcae"/>
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:padding="10dp"
+                                android:layout_gravity="center"
+                                android:gravity="center|start"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Developer"
+                                    android:textSize="16sp"
+                                    android:textColor="@color/homefragfont"
+                                    android:fontFamily="@font/montbold"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Creator of this application ."
+                                    android:singleLine="true"
+                                    android:textSize="13sp"
+                                    android:textColor="@color/homefragfont"
+                                    android:alpha="0.5"
+                                    android:layout_marginTop="5dp"
+                                    android:fontFamily="@font/montbold"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvLogout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    app:cardBackgroundColor="@color/homefragfont"
+                    app:cardElevation="0dp"
+                    app:cardCornerRadius="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="100dp"
+                    tools:ignore="DuplicateIds">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp">
+
+                            <LinearLayout
+                                android:layout_width="70dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center">
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/logout_interface"/>
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:padding="10dp"
+                                android:layout_gravity="center"
+                                android:gravity="center|start"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Log out"
+                                    android:textSize="16sp"
+                                    android:textColor="@color/CustomBlack"
+                                    android:fontFamily="@font/montbold"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</LinearLayout>

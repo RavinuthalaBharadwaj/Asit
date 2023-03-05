@@ -5,10 +5,11 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#F9F9F9</color>
-    //ECEDF7
-    <color name="CustomBlack">#1B1C1E</color>
+    //ECEDF7 //001011 //1E2023
+    <color name="CustomBlack">#191924</color>
+
     <color name="CustomPurple">#6A5EEA</color>
-    <color name="CustomRed">#e85859</color>
+    <color name="CustomRed">#D22F2F</color>
     <color name="CustomFontColor">#1B1C1E</color>
     <color name="Homefragback">#0E0E0E</color>
     <color name="Homefragnotifybar">#050119</color>
@@ -16,4 +17,6 @@
     <color name="purple">#A431F6</color>
     <color name="teal">#03DAC5</color>
     <color name="blue">#0281E6</color>
+
+    <color name="ActiveOutline">#00F583</color>
 </resources>

@@ -10,69 +10,98 @@
         <entry key="..\:/AsitFinal/app/src/main/res/drawable/gradient.xml" value="0.2745" />
         <entry key="..\:/AsitFinal/app/src/main/res/drawable/horizontal_progress.xml" value="0.2735" />
         <entry key="..\:/AsitFinal/app/src/main/res/drawable/horizontal_progress_for_main_card.xml" value="0.2745" />
+        <entry key="..\:/AsitFinal/app/src/main/res/drawable/ic_baseline_arrow_forward_24.xml" value="0.122" />
         <entry key="..\:/AsitFinal/app/src/main/res/drawable/ic_logo.xml" value="0.2745" />
         <entry key="..\:/AsitFinal/app/src/main/res/drawable/line.xml" value="0.2735" />
         <entry key="..\:/AsitFinal/app/src/main/res/drawable/menuitems.xml" value="0.2115" />
         <entry key="..\:/AsitFinal/app/src/main/res/drawable/otpbgafterclick.xml" value="0.136" />
         <entry key="..\:/AsitFinal/app/src/main/res/drawable/otpbgbeforeclick.xml" value="0.136" />
+        <entry key="..\:/AsitFinal/app/src/main/res/drawable/scrollbar.xml" value="0.2745" />
         <entry key="..\:/AsitFinal/app/src/main/res/drawable/tab_bar.xml" value="0.2735" />
         <entry key="..\:/AsitFinal/app/src/main/res/drawable/vertical_progress_for_main_card.xml" value="0.2745" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/account_created.xml" value="0.2452991452991453" />
+        <entry key="..\:/AsitFinal/app/src/main/res/layout/activity_alaram_setter.xml" value="0.12227447627191107" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/activity_attendance.xml" value="0.2264151024877837" />
-        <entry key="..\:/AsitFinal/app/src/main/res/layout/activity_books.xml" value="0.23247863247863249" />
+        <entry key="..\:/AsitFinal/app/src/main/res/layout/activity_books.xml" value="0.2264151024877837" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/activity_books_home.xml" value="0.2452991452991453" />
-        <entry key="..\:/AsitFinal/app/src/main/res/layout/activity_books_main.xml" value="0.2585585585585586" />
+        <entry key="..\:/AsitFinal/app/src/main/res/layout/activity_books_main.xml" value="0.2988679352838745" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/activity_faculty_attendance.xml" value="0.2452991452991453" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/activity_faculty_attendance2.xml" value="0.2517543859649123" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/activity_faculty_home.xml" value="0.23376068376068376" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/activity_faculty_login.xml" value="0.2452991452991453" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/activity_give_attendance.xml" value="0.23376068376068376" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/activity_give_attendance_for15_days.xml" value="0.2517543859649123" />
-        <entry key="..\:/AsitFinal/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/AsitFinal/app/src/main/res/layout/activity_login_for_second_year.xml" value="0.2517543859649123" />
+        <entry key="..\:/AsitFinal/app/src/main/res/layout/activity_main.xml" value="0.2330097173675877" />
+        <entry key="..\:/AsitFinal/app/src/main/res/layout/activity_main_for_second_year.xml" value="0.23991228070175438" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/activity_otp.xml" value="0.25" />
-        <entry key="..\:/AsitFinal/app/src/main/res/layout/activity_sign_in.xml" value="0.2988679352838745" />
-        <entry key="..\:/AsitFinal/app/src/main/res/layout/activity_sign_in_user.xml" value="0.2452991452991453" />
+        <entry key="..\:/AsitFinal/app/src/main/res/layout/activity_settings.xml" value="0.2517543859649123" />
+        <entry key="..\:/AsitFinal/app/src/main/res/layout/activity_sign_in.xml" value="0.1986842105263158" />
+        <entry key="..\:/AsitFinal/app/src/main/res/layout/activity_sign_in_user.xml" value="0.2330097173675877" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/activity_sign_up.xml" value="0.25" />
-        <entry key="..\:/AsitFinal/app/src/main/res/layout/activity_splash.xml" value="0.2452991452991453" />
+        <entry key="..\:/AsitFinal/app/src/main/res/layout/activity_some_thing_went_wrong.xml" value="0.23991228070175438" />
+        <entry key="..\:/AsitFinal/app/src/main/res/layout/activity_splash.xml" value="0.16776699650466312" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/activity_syllabus_viewer.xml" value="0.2585585585585586" />
+        <entry key="..\:/AsitFinal/app/src/main/res/layout/activity_test.xml" value="0.2517543859649123" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/activity_total_attendance.xml" value="0.2517543859649123" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/activity_uplaod_atech_talk.xml" value="0.2585585585585586" />
+        <entry key="..\:/AsitFinal/app/src/main/res/layout/activity_web_page.xml" value="0.18881578947368421" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/activity_web_view.xml" value="0.23991228070175438" />
-        <entry key="..\:/AsitFinal/app/src/main/res/layout/activity_welcome.xml" value="0.2988679352838745" />
+        <entry key="..\:/AsitFinal/app/src/main/res/layout/activity_welcome.xml" value="0.18640777389407015" />
+        <entry key="..\:/AsitFinal/app/src/main/res/layout/all_profile_bottom_sheet.xml" value="0.1980263157894737" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/attendance_dilaogue.xml" value="0.2452991452991453" />
+        <entry key="..\:/AsitFinal/app/src/main/res/layout/bottom_sheet_password_reset.xml" value="0.2573749465583583" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/change_password.xml" value="0.2452991452991453" />
+        <entry key="..\:/AsitFinal/app/src/main/res/layout/change_password_bottom_sheet.xml" value="0.1980263157894737" />
+        <entry key="..\:/AsitFinal/app/src/main/res/layout/change_username.xml" value="0.2517543859649123" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/custom_tab_font.xml" value="0.25765765765765763" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/custom_tab_font_ori.xml" value="0.2585585585585586" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/customdialog.xml" value="0.2452991452991453" />
+        <entry key="..\:/AsitFinal/app/src/main/res/layout/downloadingdialouge.xml" value="0.2517543859649123" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/faculty_attendance_model.xml" value="0.23376068376068376" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/failure_dialoge.xml" value="0.2452991452991453" />
+        <entry key="..\:/AsitFinal/app/src/main/res/layout/fragment_account_setting.xml" value="0.2330097173675877" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/fragment_assignments.xml" value="0.23247863247863249" />
-        <entry key="..\:/AsitFinal/app/src/main/res/layout/fragment_attendace.xml" value="0.19924529018924966" />
-        <entry key="..\:/AsitFinal/app/src/main/res/layout/fragment_devloper.xml" value="0.2988679352838745" />
+        <entry key="..\:/AsitFinal/app/src/main/res/layout/fragment_attendace.xml" value="0.17708738519936665" />
+        <entry key="..\:/AsitFinal/app/src/main/res/layout/fragment_change_log_.xml" value="0.258230012825994" />
+        <entry key="..\:/AsitFinal/app/src/main/res/layout/fragment_changelog_frag.xml" value="0.258230012825994" />
+        <entry key="..\:/AsitFinal/app/src/main/res/layout/fragment_classes.xml" value="0.2517543859649123" />
+        <entry key="..\:/AsitFinal/app/src/main/res/layout/fragment_devloper.xml" value="0.19924529018924966" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/fragment_home.xml" value="0.2988679352838745" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/fragment_home_NEW.xml" value="0.2452991452991453" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/fragment_home_copy.xml" value="0.2452991452991453" />
+        <entry key="..\:/AsitFinal/app/src/main/res/layout/fragment_home_frag_second_year.xml" value="0.1303549571603427" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/fragment_home_new.xml" value="0.27810077519379844" />
-        <entry key="..\:/AsitFinal/app/src/main/res/layout/fragment_home_new_test.xml" value="0.23070739549839228" />
+        <entry key="..\:/AsitFinal/app/src/main/res/layout/fragment_home_new_test.xml" value="0.2330097173675877" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/fragment_list.xml" value="0.2534188034188034" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/fragment_materilas.xml" value="0.23247863247863249" />
+        <entry key="..\:/AsitFinal/app/src/main/res/layout/fragment_news.xml" value="0.18881578947368421" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/fragment_news_update_frag_one.xml" value="0.23846153846153847" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/fragment_notification_fragmnet.xml" value="0.2517543859649123" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/fragment_previous_papers_farg.xml" value="0.2452991452991453" />
-        <entry key="..\:/AsitFinal/app/src/main/res/layout/fragment_profile.xml" value="0.2988679352838745" />
-        <entry key="..\:/AsitFinal/app/src/main/res/layout/fragment_recent.xml" value="0.24188034188034188" />
+        <entry key="..\:/AsitFinal/app/src/main/res/layout/fragment_profile.xml" value="0.2330097173675877" />
+        <entry key="..\:/AsitFinal/app/src/main/res/layout/fragment_profile_new.xml" value="0.20504855128347715" />
+        <entry key="..\:/AsitFinal/app/src/main/res/layout/fragment_recent.xml" value="0.2264151024877837" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/fragment_recent__receipt.xml" value="0.24188034188034188" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/fragment_recent_tech_talk_uploads.xml" value="0.2585585585585586" />
-        <entry key="..\:/AsitFinal/app/src/main/res/layout/fragment_search.xml" value="0.25" />
+        <entry key="..\:/AsitFinal/app/src/main/res/layout/fragment_search.xml" value="0.30757282692521576" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/fragment_syllabus.xml" value="0.25" />
-        <entry key="..\:/AsitFinal/app/src/main/res/layout/fragment_syllabus_fragmnet.xml" value="0.23247863247863249" />
+        <entry key="..\:/AsitFinal/app/src/main/res/layout/fragment_syllabus_fragmnet.xml" value="0.2264151024877837" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/fragment_tech_talk.xml" value="0.2463963963963964" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/fragment_upload_receipt.xml" value="0.2988679352838745" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/fragment_web_page_loader.xml" value="0.23991228070175438" />
+        <entry key="..\:/AsitFinal/app/src/main/res/layout/home_screen_viewpager_model_lyt.xml" value="0.2517543859649123" />
+        <entry key="..\:/AsitFinal/app/src/main/res/layout/in_work.xml" value="0.2573749465583583" />
+        <entry key="..\:/AsitFinal/app/src/main/res/layout/inmaintainence.xml" value="0.2657407407407407" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/materialmodel_lyt.xml" value="0.4528302049755674" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/materialmodellyt.xml" value="0.2988679352838745" />
+        <entry key="..\:/AsitFinal/app/src/main/res/layout/mid_exams_bottomsheet.xml" value="0.30757282692521576" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/model_lyt_recent_tech_talk.xml" value="0.2585585585585586" />
+        <entry key="..\:/AsitFinal/app/src/main/res/layout/new_feautrea_dialouge.xml" value="0.258230012825994" />
+        <entry key="..\:/AsitFinal/app/src/main/res/layout/new_feautrea_dialouge_flow_2.xml" value="0.258230012825994" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/noInternt.xml" value="0.2452991452991453" />
+        <entry key="..\:/AsitFinal/app/src/main/res/layout/nointernt.xml" value="0.2517543859649123" />
+        <entry key="..\:/AsitFinal/app/src/main/res/layout/not_available.xml" value="0.31354166666666666" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/notification_pop_up_layout.xml" value="0.2517543859649123" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/notificationmodel_lyt.xml" value="0.2517543859649123" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/receipt_model_lyt.xml" value="0.24188034188034188" />
@@ -80,6 +109,7 @@
         <entry key="..\:/AsitFinal/app/src/main/res/layout/recent_tech_talk.xml" value="0.25765765765765763" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/searchmodel_lyt.xml" value="0.2988679352838745" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/searchmodel_lyt_for_home.xml" value="0.18881578947368421" />
+        <entry key="..\:/AsitFinal/app/src/main/res/layout/set_activity_bottomsheet.xml" value="0.1980263157894737" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/sucess_dialog.xml" value="0.2452991452991453" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/syllabusmodel_lyt.xml" value="0.24444444444444444" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/tab_view_text.xml" value="0.2452991452991453" />
@@ -88,14 +118,17 @@
         <entry key="..\:/AsitFinal/app/src/main/res/layout/updates_dialog.xml" value="0.2452991452991453" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/verified_dialog.xml" value="0.2452991452991453" />
         <entry key="..\:/AsitFinal/app/src/main/res/layout/verified_dialog_at_login.xml" value="0.2452991452991453" />
+        <entry key="..\:/AsitFinal/app/src/main/res/layout/viewpagermodel.xml" value="0.2517543859649123" />
+        <entry key="..\:/AsitFinal/app/src/main/res/layout/viewpagermodelofyear.xml" value="0.2657407407407407" />
         <entry key="..\:/AsitFinal/app/src/main/res/menu/books_items.xml" value="0.23247863247863249" />
         <entry key="..\:/AsitFinal/app/src/main/res/menu/items.xml" value="0.25" />
+        <entry key="..\:/AsitFinal/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.246" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.3463541666666667" />
         <entry key="app/src/main/res/layout/fragment_list.xml" value="0.3463541666666667" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Embedded JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

@@ -9,7 +9,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -19,14 +20,10 @@
                 android:id="@+id/firstlyt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
                 android:orientation="vertical">
 
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="350dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/books_vector">
-                </ImageView>
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -37,7 +34,7 @@
                         android:layout_height="wrap_content"
                         android:text="Pick your"
                         android:textSize="20sp"
-                        android:fontFamily="@font/montiextrabold"
+                        android:fontFamily="@font/montbold"
                         android:layout_marginStart="20dp"
                         android:layout_marginTop="10dp"
                         android:textColor="@color/homefragfont"/>
@@ -46,387 +43,499 @@
                         android:layout_height="wrap_content"
                         android:text="Semester"
                         android:textSize="30sp"
-                        android:fontFamily="@font/montblack"
+                        android:fontFamily="@font/montbold"
                         android:layout_marginStart="20dp"
-                        android:textColor="@color/CustomPurple"/>
+                        android:textColor="@color/homefragfont"/>
                 </LinearLayout>
             </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/lyt2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/firstlyt"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    app:cardBackgroundColor="@color/homefragfont"
+                    app:cardCornerRadius="20dp" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvExpand"
+                    android:layout_width="wrap_content"
+                    android:layout_height="8dp"
+                    android:layout_marginStart="10dp"
+                    app:cardBackgroundColor="@color/homefragfont"
+                    app:cardCornerRadius="20dp">
+
+                    <LinearLayout
+                        android:id="@+id/InvisibleLyt"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:visibility="gone"></LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/lyt3"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_below="@id/lyt2"
+                android:layout_gravity="center"
+                android:layout_marginStart="00dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="15dp"
+                    app:cardBackgroundColor="#D6C3C9"
+                    app:cardCornerRadius="25dp"
+                    app:cardElevation="0dp" />
+
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="150dp"
+                    android:layout_centerInParent="true"
+                    android:scrollX="0dp"
+                    android:scrollY="00dp"
+                    android:src="@drawable/girl_studying" />
+            </RelativeLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/firstlyt"
+                android:layout_below="@id/lyt3"
                 android:orientation="vertical">
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="25dp"
-                    android:layout_marginTop="25dp"
-                    android:layout_marginBottom="10dp"
-                    app:cardBackgroundColor="#20575757"
-                    app:cardCornerRadius="16dp">
-
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/cvfirstyear"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        app:cardBackgroundColor="#743C3C3C"
-                        app:cardCornerRadius="13dp">
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                            <TextView
-                                android:id="@+id/text1styr"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentTop="true"
-                                android:layout_centerInParent="true"
-                                android:layout_marginTop="20dp"
-                                android:layout_marginBottom="20dp"
-                                android:fontFamily="@font/oboardfont"
-                                android:text="First year"
-                                android:textColor="@color/homefragfont"
-                                android:textSize="16sp" />
-
-                            <LinearLayout
-                                android:id="@+id/optionlyt1styear"
-                                android:layout_width="match_parent"
-                                android:layout_height="200dp"
-                                android:layout_below="@id/text1styr"
-                                android:orientation="vertical"
-                                android:visibility="gone">
-
-                                <androidx.cardview.widget.CardView
-                                    android:id="@+id/cvOptionOneFirstYear"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="60dp"
-                                    android:layout_marginHorizontal="20dp"
-                                    app:cardBackgroundColor="#C13C3C3C"
-                                    app:cardCornerRadius="13dp">
-
-                                    <RelativeLayout
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent">
-
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:layout_centerInParent="true"
-                                            android:fontFamily="@font/oboardfont"
-                                            android:text="Semster one"
-                                            android:textColor="@color/homefragfont"
-                                            android:textSize="17sp" />
-                                    </RelativeLayout>
-                                </androidx.cardview.widget.CardView>
-
-                                <androidx.cardview.widget.CardView
-                                    android:id="@+id/CvFirstYearOptionTwo"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="60dp"
-                                    android:layout_marginHorizontal="20dp"
-                                    android:layout_marginTop="20dp"
-                                    app:cardBackgroundColor="#C13C3C3C"
-                                    app:cardCornerRadius="13dp">
-
-                                    <RelativeLayout
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent">
-
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:layout_centerInParent="true"
-                                            android:fontFamily="@font/oboardfont"
-                                            android:text="Semster Two"
-                                            android:textColor="@color/homefragfont"
-                                            android:textSize="17sp" />
-                                    </RelativeLayout>
-                                </androidx.cardview.widget.CardView>
-                            </LinearLayout>
-                        </RelativeLayout>
-                    </androidx.cardview.widget.CardView>
-
-                </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="20dp"
-                    app:cardBackgroundColor="#20575757"
-                    app:cardCornerRadius="16dp">
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/CvSecondYear"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_margin="10dp"
-                        app:cardBackgroundColor="#743C3C3C"
-                        app:cardCornerRadius="13dp">
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                            <TextView
-                                android:id="@+id/text2yr"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentTop="true"
-                                android:layout_centerInParent="true"
-                                android:layout_marginTop="20dp"
-                                android:layout_marginBottom="20dp"
-                                android:fontFamily="@font/oboardfont"
-                                android:text="Second year"
-                                android:textColor="@color/homefragfont"
-                                android:textSize="16sp" />
-
-                            <LinearLayout
-                                android:id="@+id/optionlytsecondyear"
-                                android:layout_width="match_parent"
-                                android:layout_height="200dp"
-                                android:layout_below="@id/text2yr"
-                                android:orientation="vertical"
-                                android:visibility="gone">
-
-                                <androidx.cardview.widget.CardView
-                                    android:id="@+id/cvsecondyearoptionone"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="60dp"
-                                    android:layout_marginHorizontal="20dp"
-                                    app:cardBackgroundColor="#C13C3C3C"
-                                    app:cardCornerRadius="13dp">
-
-                                    <RelativeLayout
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent">
-
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:layout_centerInParent="true"
-                                            android:fontFamily="@font/oboardfont"
-                                            android:text="Semster one"
-                                            android:textColor="@color/homefragfont"
-                                            android:textSize="17sp" />
-                                    </RelativeLayout>
-                                </androidx.cardview.widget.CardView>
-
-                                <androidx.cardview.widget.CardView
-                                    android:id="@+id/cvsecondyearoptiontwo"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="60dp"
-                                    android:layout_marginHorizontal="20dp"
-                                    android:layout_marginTop="20dp"
-                                    app:cardBackgroundColor="#C13C3C3C"
-                                    app:cardCornerRadius="13dp">
-
-                                    <RelativeLayout
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent">
-
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:layout_centerInParent="true"
-                                            android:fontFamily="@font/oboardfont"
-                                            android:text="Semster Two"
-                                            android:textColor="@color/homefragfont"
-                                            android:textSize="17sp" />
-                                    </RelativeLayout>
-                                </androidx.cardview.widget.CardView>
-                            </LinearLayout>
-                        </RelativeLayout>
-                    </androidx.cardview.widget.CardView>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="60dp"
                     android:layout_marginHorizontal="20dp"
                     android:layout_marginTop="10dp"
-                    app:cardBackgroundColor="#20575757"
-                    app:cardCornerRadius="16dp">
+                    app:cardBackgroundColor="@color/CustomBlack"
+                    app:cardCornerRadius="25dp">
 
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/cvThirdYear"
+                    <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        app:cardBackgroundColor="#743C3C3C"
-                        app:cardCornerRadius="13dp">
+                        android:layout_height="match_parent">
 
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                            <TextView
-                                android:id="@+id/text3yr"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentTop="true"
-                                android:layout_centerInParent="true"
-                                android:layout_marginTop="20dp"
-                                android:layout_marginBottom="20dp"
-                                android:fontFamily="@font/oboardfont"
-                                android:text="Third year"
-                                android:textColor="@color/homefragfont"
-                                android:textSize="16sp" />
-
-                            <LinearLayout
-                                android:id="@+id/lytThirdYear"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@id/text3yr"
-                                android:orientation="vertical"
-                                android:visibility="gone">
-
-                                <androidx.cardview.widget.CardView
-                                    android:id="@+id/cvThirdYearOptionOne"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="60dp"
-                                    android:layout_marginHorizontal="20dp"
-                                    app:cardBackgroundColor="#C13C3C3C"
-                                    app:cardCornerRadius="13dp">
-
-                                    <RelativeLayout
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent">
-
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:layout_centerInParent="true"
-                                            android:fontFamily="@font/oboardfont"
-                                            android:text="Semster one"
-                                            android:textColor="@color/homefragfont"
-                                            android:textSize="17sp" />
-                                    </RelativeLayout>
-                                </androidx.cardview.widget.CardView>
-
-                                <androidx.cardview.widget.CardView
-                                    android:id="@+id/cvThirdYearOptionTwo"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="60dp"
-                                    android:layout_marginHorizontal="20dp"
-                                    android:layout_marginVertical="30dp"
-                                    android:layout_marginTop="20dp"
-                                    app:cardBackgroundColor="#C13C3C3C"
-                                    app:cardCornerRadius="13dp">
-
-                                    <RelativeLayout
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent">
-
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:layout_centerInParent="true"
-                                            android:fontFamily="@font/oboardfont"
-                                            android:text="Semster Two"
-                                            android:textColor="@color/homefragfont"
-                                            android:textSize="17sp" />
-                                    </RelativeLayout>
-                                </androidx.cardview.widget.CardView>
-                            </LinearLayout>
-                        </RelativeLayout>
-                    </androidx.cardview.widget.CardView>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:fontFamily="@font/montbold"
+                            android:text="First year"
+                            android:textColor="@color/homefragfont"
+                            android:textSize="18sp" />
+                    </RelativeLayout>
                 </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.2">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cvOptionOneFirstYear"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="10dp"
+                            app:cardBackgroundColor="#AEDCC0"
+                            app:cardCornerRadius="25dp">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_gravity="center"
+                                android:layout_marginHorizontal="30dp"
+                                app:cardBackgroundColor="#32F6F5F5"
+                                app:cardCornerRadius="25dp"
+                                app:cardElevation="0dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:fontFamily="@font/montbold"
+                                    android:text="Semester one"
+                                    android:textColor="@color/Homefragback"
+                                    android:textSize="14sp" />
+                            </androidx.cardview.widget.CardView>
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.8">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/CvFirstYearOptionTwo"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:cardBackgroundColor="#D6C3C9"
+                            app:cardCornerRadius="25dp">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_gravity="center"
+                                android:layout_marginHorizontal="30dp"
+                                app:cardBackgroundColor="#6AF6F5F5"
+                                app:cardCornerRadius="100dp"
+                                app:cardElevation="0dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:fontFamily="@font/montbold"
+                                    android:text="2"
+                                    android:textColor="@color/Homefragback"
+                                    android:textSize="14sp" />
+                            </androidx.cardview.widget.CardView>
+
+
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+                </LinearLayout>
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/cvFinalYear"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="60dp"
                     android:layout_marginHorizontal="20dp"
                     android:layout_marginTop="10dp"
-                    app:cardBackgroundColor="#20575757"
-                    app:cardCornerRadius="16dp">
+                    app:cardBackgroundColor="@color/CustomBlack"
+                    app:cardCornerRadius="25dp">
 
-                    <androidx.cardview.widget.CardView
+                    <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_margin="10dp"
-                        app:cardBackgroundColor="#743C3C3C"
-                        app:cardCornerRadius="13dp">
+                        android:layout_height="match_parent">
 
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:fontFamily="@font/montbold"
+                            android:text="Second year"
+                            android:textColor="@color/homefragfont"
+                            android:textSize="18sp" />
 
-                            <TextView
-                                android:id="@+id/text4yr"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentTop="true"
-                                android:layout_centerInParent="true"
-                                android:layout_marginTop="20dp"
-                                android:layout_marginBottom="20dp"
-                                android:fontFamily="@font/oboardfont"
-                                android:text="Final year"
-                                android:textColor="@color/homefragfont"
-                                android:textSize="16sp" />
-
-                            <LinearLayout
-                                android:id="@+id/lytFinalYear"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@id/text4yr"
-                                android:orientation="vertical"
-                                android:visibility="gone">
-
-                                <androidx.cardview.widget.CardView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="60dp"
-                                    android:layout_marginHorizontal="20dp"
-                                    app:cardBackgroundColor="#C13C3C3C"
-                                    app:cardCornerRadius="13dp">
-
-                                    <RelativeLayout
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent">
-
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:layout_centerInParent="true"
-                                            android:fontFamily="@font/oboardfont"
-                                            android:text="Semster one"
-                                            android:textColor="@color/homefragfont"
-                                            android:textSize="17sp" />
-                                    </RelativeLayout>
-                                </androidx.cardview.widget.CardView>
-
-                                <androidx.cardview.widget.CardView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="60dp"
-                                    android:layout_marginHorizontal="20dp"
-                                    android:layout_marginVertical="30dp"
-                                    android:layout_marginTop="20dp"
-                                    app:cardBackgroundColor="#C13C3C3C"
-                                    app:cardCornerRadius="13dp">
-
-                                    <RelativeLayout
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent">
-
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:layout_centerInParent="true"
-                                            android:fontFamily="@font/oboardfont"
-                                            android:text="Semster Two"
-                                            android:textColor="@color/homefragfont"
-                                            android:textSize="17sp" />
-                                    </RelativeLayout>
-                                </androidx.cardview.widget.CardView>
-                            </LinearLayout>
-                        </RelativeLayout>
-                    </androidx.cardview.widget.CardView>
+                    </RelativeLayout>
                 </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.8">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cvsecondyearoptionone"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="10dp"
+                            app:cardBackgroundColor="#D6C3C9"
+                            app:cardCornerRadius="25dp">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_gravity="center"
+                                android:layout_marginHorizontal="30dp"
+                                app:cardBackgroundColor="#32F6F5F5"
+                                app:cardCornerRadius="25dp"
+                                app:cardElevation="0dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:fontFamily="@font/montbold"
+                                    android:text="1"
+                                    android:textColor="@color/Homefragback"
+                                    android:textSize="14sp" />
+                            </androidx.cardview.widget.CardView>
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.2">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cvsecondyearoptiontwo"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:cardBackgroundColor="#AEDCC0"
+                            app:cardCornerRadius="25dp">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_gravity="center"
+                                android:layout_marginHorizontal="30dp"
+                                app:cardBackgroundColor="#6AF6F5F5"
+                                app:cardCornerRadius="100dp"
+                                app:cardElevation="0dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:fontFamily="@font/montbold"
+                                    android:text="Semster two"
+                                    android:textColor="@color/Homefragback"
+                                    android:textSize="14sp" />
+                            </androidx.cardview.widget.CardView>
+
+
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="10dp"
+                    app:cardBackgroundColor="@color/CustomBlack"
+                    app:cardCornerRadius="25dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:fontFamily="@font/montbold"
+                            android:gravity="center"
+                            android:text="Third year"
+                            android:textColor="@color/homefragfont"
+                            android:textSize="18sp" />
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.2">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cvThirdYearOptionOne"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="10dp"
+                            app:cardBackgroundColor="#D6C3C9"
+                            app:cardCornerRadius="25dp">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_gravity="center"
+                                android:layout_marginHorizontal="30dp"
+                                app:cardBackgroundColor="#32F6F5F5"
+                                app:cardCornerRadius="25dp"
+                                app:cardElevation="0dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:fontFamily="@font/montbold"
+                                    android:text="Semester One"
+                                    android:textColor="@color/Homefragback"
+                                    android:textSize="14sp" />
+                            </androidx.cardview.widget.CardView>
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.8">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cvThirdYearOptionTwo"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:cardBackgroundColor="#AEDCC0"
+                            app:cardCornerRadius="25dp">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_gravity="center"
+                                android:layout_marginHorizontal="30dp"
+                                app:cardBackgroundColor="#6AF6F5F5"
+                                app:cardCornerRadius="100dp"
+                                app:cardElevation="0dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:fontFamily="@font/montbold"
+                                    android:text="2"
+                                    android:textColor="@color/Homefragback"
+                                    android:textSize="14sp" />
+                            </androidx.cardview.widget.CardView>
+
+
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="10dp"
+                    app:cardBackgroundColor="@color/CustomBlack"
+                    app:cardCornerRadius="13dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="20dp"
+                            android:fontFamily="@font/montbold"
+                            android:text="Final year"
+                            android:textColor="@color/homefragfont"
+                            android:textSize="18sp" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_marginBottom="30dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.8">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/FinalYearOptionOne"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="10dp"
+                            app:cardBackgroundColor="#AEDCC0"
+                            app:cardCornerRadius="25dp">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_gravity="center"
+                                android:layout_marginHorizontal="30dp"
+                                app:cardBackgroundColor="#32F6F5F5"
+                                app:cardCornerRadius="25dp"
+                                app:cardElevation="0dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:fontFamily="@font/montbold"
+                                    android:text="1"
+                                    android:textColor="@color/Homefragback"
+                                    android:textSize="14sp" />
+                            </androidx.cardview.widget.CardView>
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.2">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/FinalYearOptionTwo"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:cardBackgroundColor="#D6C3C9"
+                            app:cardCornerRadius="25dp">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_gravity="center"
+                                android:layout_marginHorizontal="30dp"
+                                app:cardBackgroundColor="#6AF6F5F5"
+                                app:cardCornerRadius="100dp"
+                                app:cardElevation="0dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:fontFamily="@font/montbold"
+                                    android:text="Semester two"
+                                    android:textColor="@color/Homefragback"
+                                    android:textSize="14sp" />
+                            </androidx.cardview.widget.CardView>
+
+
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+                </LinearLayout>
+
             </LinearLayout>
         </RelativeLayout>
     </ScrollView>

@@ -1,11 +1,5 @@
 package com.Audisankara.asit;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -15,8 +9,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.Audisankara.asit.GiveAttendance;
-import com.Audisankara.asit.R;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
 import com.Audisankara.asit.helper.AttendanceViewInterface;
 import com.Audisankara.asit.helper.Constant;
 import com.google.firebase.database.DataSnapshot;

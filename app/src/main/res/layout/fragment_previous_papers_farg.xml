@@ -4,29 +4,105 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/lyt_previos_papers"
+    android:orientation="vertical"
     android:background="@color/Homefragback"
     tools:context=".PreviousPapersFarg">
+    <FrameLayout
+        android:id="@+id/fmlyt"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/PresentLyt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginTop="30dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/montbold"
+                    android:text="Previous Papers"
+                    android:textColor="@color/homefragfont"
+                    android:textSize="18sp" />
+            </RelativeLayout>
 
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/lottie"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_centerInParent="true"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"
-        app:lottie_url="https://assets7.lottiefiles.com/packages/lf20_usmfx6bp.json"></com.airbnb.lottie.LottieAnimationView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvMidone"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="13dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Available soon"
-        android:layout_below="@id/lottie"
-        android:layout_centerInParent="true"
-        android:textSize="17sp"
-        android:fontFamily="@font/workmedium"
-        android:layout_marginTop="15dp"
-        android:textColor="@color/homefragfont"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="#D6C3C9" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/montbold"
+                        android:text="Mid One"
+                        android:textColor="@color/Homefragback"
+                        android:textSize="18sp" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvMidTwo"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="20dp"
+                app:cardCornerRadius="13dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="#D6C3C9" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/montbold"
+                        android:text="Mid Two"
+                        android:textColor="@color/Homefragback"
+                        android:textSize="18sp" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
 
 </RelativeLayout>

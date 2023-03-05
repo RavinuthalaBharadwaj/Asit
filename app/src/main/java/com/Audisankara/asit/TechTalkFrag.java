@@ -1,13 +1,7 @@
 package com.Audisankara.asit;
 
 import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
-import androidx.fragment.app.Fragment;
-
 import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -21,6 +15,10 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
+import androidx.fragment.app.Fragment;
 
 import com.Audisankara.asit.helper.Constant;
 import com.Audisankara.asit.helper.Session;
@@ -122,7 +120,7 @@ public class TechTalkFrag extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if(!s.toString().isEmpty()){
+                if(!s.toString().isEmpty() && s.toString().startsWith("https://drive.google.com/")){
                     TransitionManager.beginDelayedTransition(MainCard,new AutoTransition().addListener(new Transition.TransitionListener() {
                         @Override
                         public void onTransitionStart(Transition transition) {
@@ -329,7 +327,7 @@ public class TechTalkFrag extends Fragment {
     public void onResume() {
         super.onResume();
         innerfour.setClickable(true);
-        if(session.getInt("TotalTechUploads") == 8) {
+        if(session.getInt("TotalTechUploads") == 6) {
             Toast.makeText(requireContext(),"Max limit reached",Toast.LENGTH_LONG).show();
             etLink.setEnabled(false);
         }

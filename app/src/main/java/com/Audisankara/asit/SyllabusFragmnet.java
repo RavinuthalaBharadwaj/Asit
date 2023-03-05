@@ -1,21 +1,19 @@
 package com.Audisankara.asit;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
-
-import androidx.cardview.widget.CardView;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import java.util.ArrayList;
+import androidx.cardview.widget.CardView;
+import androidx.fragment.app.Fragment;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -75,6 +73,12 @@ public class SyllabusFragmnet extends Fragment {
         cvSyllabus = view.findViewById(R.id.cvSyllabus);
         frameLayout = view.findViewById(R.id.fmlyt);
         presentLyt = view.findViewById(R.id.PresentLyt);
+        if (Build.VERSION.SDK_INT >= 21) {
+            Window window = requireActivity().getWindow();
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            window.setStatusBarColor(this.getResources().getColor(R.color.Homefragback));
+        }
         cvSyllabus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -100,8 +104,28 @@ public class SyllabusFragmnet extends Fragment {
                         i.putExtra("SyllabusLink","https://firebasestorage.googleapis.com/v0/b/audisankara-institute.appspot.com/o/Syllabus%2FComputerNetworks.png?alt=media&token=8365b636-1715-40b6-b5c6-e9b0e70c2133");
                         startActivity(i);
                         break;
-                    case "Uhv" :
+                    case "UhvLink" :
                         i.putExtra("SyllabusLink","https://firebasestorage.googleapis.com/v0/b/audisankara-institute.appspot.com/o/Syllabus%2FUHV.png?alt=media&token=e1bc3afc-d914-48d0-ad38-49956c0df562");
+                        startActivity(i);
+                        break;
+                    case "DBMSLINK" :
+                        i.putExtra("SyllabusLink","https://firebasestorage.googleapis.com/v0/b/asit-a51d7.appspot.com/o/SemesterOne%2FSyllabus%2FDBMS.png?alt=media&token=6a464dcf-3e2a-42e1-9e08-78dcf80e9caf");
+                        startActivity(i);
+                        break;
+                    case "SELINK" :
+                        i.putExtra("SyllabusLink","https://firebasestorage.googleapis.com/v0/b/asit-a51d7.appspot.com/o/SemesterOne%2FSyllabus%2FSE.png?alt=media&token=8dbbb747-d1f5-4a89-97a2-6ee8e74a9241");
+                        startActivity(i);
+                        break;
+                    case "JAVALINK" :
+                        i.putExtra("SyllabusLink","https://firebasestorage.googleapis.com/v0/b/asit-a51d7.appspot.com/o/SemesterOne%2FSyllabus%2FJAVA.png?alt=media&token=4dab450b-dea9-41ce-9081-46abe0aca183");
+                        startActivity(i);
+                        break;
+                    case "COALINK" :
+                        i.putExtra("SyllabusLink","https://firebasestorage.googleapis.com/v0/b/asit-a51d7.appspot.com/o/SemesterOne%2FSyllabus%2FCOA.png?alt=media&token=59b2c0d6-0d3f-466f-9059-e1ab3064484c");
+                        startActivity(i);
+                        break;
+                    case "PBNMLINK" :
+                        i.putExtra("SyllabusLink","https://firebasestorage.googleapis.com/v0/b/asit-a51d7.appspot.com/o/SemesterOne%2FSyllabus%2FProbabilty.png?alt=media&token=1e3a6b36-05c6-4e94-85b5-51a7d1981dea");
                         startActivity(i);
                         break;
                 }

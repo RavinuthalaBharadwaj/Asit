@@ -4,11 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -17,9 +12,15 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.cardview.widget.CardView;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.Audisankara.asit.Adaptors.SearchAdaptor;
 import com.Audisankara.asit.Models.SearchModel;
 import com.Audisankara.asit.helper.RecylerViewInterface;
+import com.Audisankara.asit.objects.SearchRecyclerDATA;
 
 import java.util.ArrayList;
 
@@ -36,6 +37,7 @@ public class SearchFrag extends Fragment implements RecylerViewInterface {
     public static ArrayList<SearchModel> searchModelArray;
     private RecyclerView SearchRecyclerView;
     public static SearchAdaptor adaptor;
+    private CardView cvAcademics,cvExamCell,cvScoring,cvReceipts;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -49,6 +51,19 @@ public class SearchFrag extends Fragment implements RecylerViewInterface {
          adaptor = new SearchAdaptor(searchModelArray,this);
         SearchRecyclerView.setAdapter(adaptor);
 
+
+        cvAcademics = view.findViewById(R.id.cvAcademics);
+        cvExamCell = view.findViewById(R.id.cvExamCell);
+        cvScoring = view.findViewById(R.id.CvScoring);
+        cvReceipts = view.findViewById(R.id.cvReceipt);
+
+
+        cvAcademics.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                adaptor.filterList(SearchRecyclerDATA.INSTANCE.academicsRecycler());
+            }
+        });
         etSearch.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -62,7 +77,7 @@ public class SearchFrag extends Fragment implements RecylerViewInterface {
             @Override
             public void afterTextChanged(Editable s) {
                 fliter(s.toString());
-                MainActivity.chipNavigationBar.setVisibility(View.VISIBLE);
+               // MainActivityForSecondYear.chipNavigationBar.setVisibility(View.VISIBLE);
             }
         });
         return  view;
@@ -86,12 +101,12 @@ public class SearchFrag extends Fragment implements RecylerViewInterface {
     private void buildRecyclerView() {
         searchModelArray = new ArrayList<SearchModel>();
 
-        searchModelArray.add(new SearchModel("Syllabus","Get the syllabus of Present Semester\nof Btech 3rd year .","Academics",R.color.CustomPurple));
+        searchModelArray.add(new SearchModel("Syllabus","Get the syllabus of Present Semester\nof Btech 3rd year .","Academics",R.color.white));
         searchModelArray.add(new SearchModel("Receipts","Ever stand in line for hours,\nto submit piece of paper?","Exam cell",R.color.CustomRed));
         searchModelArray.add(new SearchModel("Previous Papers","Get the Model papers\nof last semester .","Academics",R.color.CustomPurple));
         searchModelArray.add(new SearchModel("Materials","Skipped so many classes?\nno worry's we got you","Academics",R.color.CustomPurple));
         searchModelArray.add(new SearchModel("Attendance","Worrying about attendance?\nnah not anymore ✨.","Scoring",R.color.teal));
-        searchModelArray.add(new SearchModel("Assignments","Writting assignmnets is now\neasier than before","Academics",R.color.CustomPurple));
+        searchModelArray.add(new SearchModel("Assignments","Writing assignments is now\neasier than before","Academics",R.color.CustomPurple));
         searchModelArray.add(new SearchModel("Results","One step all it takes\nTo see your HardWork","Scoring",R.color.teal));
     }
 
@@ -105,23 +120,23 @@ public class SearchFrag extends Fragment implements RecylerViewInterface {
     public void onItemClick(int position, Context context) {
 
         switch (position) {
-            case 0:
             case 1:
+                MainActivity.fm.beginTransaction().replace(R.id.container,new UploadReceipt()).addToBackStack(null).commit();
+                break;
             case 2:
+            case 0:
             case 3:
+            case 5:
                 startActivity(new Intent(requireContext(),BooksActivity.class));
                 break;
             case 4:
                 MainActivity.fm.beginTransaction().replace(R.id.container,new AttendaceFrag()).addToBackStack(null).commit();
                 break;
-            case 5:
+            case 6:
                 Uri uri = Uri.parse("http://202.53.75.138:2001/asit/student.php?%20=%20student%20results%20for%20ASIT");
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(uri);
                 startActivity(i);
-                break;
-            case 6:
-                MainActivity.fm.beginTransaction().replace(R.id.container,new UploadReceipt()).addToBackStack(null).commit();
                 break;
         }
     }
